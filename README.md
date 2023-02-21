@@ -1,2 +1,4 @@
-# projet-amboise
-Site internet du projet Amboise
+- Installer les dépendances avec `npm install`
+- Créer un fichier **config.js** reprenant le modèle de **config-secret.js**
+- Remplir le fichier de configuration
+- Lancer avec `node .`
