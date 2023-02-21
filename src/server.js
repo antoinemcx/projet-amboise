@@ -1,5 +1,5 @@
 const { website, production } = require('../config');
-global.db = require('./db');
+global.db = require('./database');
 const { sleep } = require('./utils/web_functions');
 
 const http = require("http");
@@ -35,8 +35,8 @@ module.exports = async () => {
 
     // ROUTERS LOADING
     console.log("\n*"); console.log(" ")
-    console.log("\x1b[32m%s\x1b[0m", "(!) Chargement routers principaux...");
-        // ...
+        const mainRoute = require("./routers/Main");
+        app.use('/', mainRoute)
     sleep(500);
     
     const listener = server.listen(website.port, '127.0.0.1', function() {

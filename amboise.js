@@ -4,6 +4,7 @@ const client = (global.client = new Client({
         GatewayIntentBits.DirectMessages, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.MessageContent ],
     allowedMentions: { parse: ['users', 'roles'], repliedUser: false }
 }));
+const fs = require('fs');
 
 client.config = require('./config.js');
 client.commandes = new Collection();

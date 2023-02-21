@@ -13,10 +13,10 @@ module.exports = {
 
     website: {
         port: 9000,
+        secret: '',
     },
   
     channels: { //Channels IDs
         welcome: "",
-        modlogs: "",
     }
 };

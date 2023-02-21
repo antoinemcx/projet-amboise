@@ -11,7 +11,7 @@ const dbPool = mariadb.createPool({
 
 dbPool.getConnection().then(() => {
     console.log(' ')
-    console.log("\x1b[33m%s\x1b[0m", `(!) Connexion à MariaDB avec succès`)
+    console.log("\x1b[33m%s\x1b[0m", `(!) Connecté à MariaDB (${db.database})`)
 }).catch(err => {
     console.log(err)
 });
