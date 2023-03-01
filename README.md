@@ -1,4 +1,38 @@
-- Installer les dépendances avec `npm install`
-- Créer un fichier **config.js** reprenant le modèle de **config-secret.js**
-- Remplir le fichier de configuration
-- Lancer avec `node .`
+# Projet Amboise - Site internet [![Stars](https://img.shields.io/github/stars/antoinemcx/projet-amboise)](https://github.com/antoinemcx/projet-amboise) [![Discord](https://img.shields.io/discord/1071830816012906608.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/JhRhU2cKVQ)
+
+Projet Amboise est un jeu de tir prenant place dans une modélisation 3D de Sainte-Marie (établissement à Albi, Tarn).
+Ce projet, fait par des terminales, a par ailleurs pour but d'aider au financement du bal des terminales de l'année 2022-2023.
+   
+Ce repo est constitué du **bot discord** et du **site internet** de Projet Amboise ; Si vous l'aimez hésitez pas à lâcher une ⭐ !
+
+## Setup du repo
+
+### 1. Pour la configuration, créez un fichier `config.js` en y remplaçant les valeurs de `config-secret.js`
+
+### 2. Installation des dépendances
+
+```sh
+$ npm install
+```
+
+### 3. MariaDB
+
+Naybor runs on the MariaDB database, a slightly modified version of MySQL.<br>
+First, create the database. The name of the database must be the same as the one set in the `config.js` file  
+
+![](https://i.imgur.com/ALeKvsf.png)
+
+#### To create the table, run the following command (after creating the database of course) :
+
+```sh
+$ npm run migration
+```
+
+### 4. Lancement du bot
+
+```sh
+$ npm run start
+```
+‎
+   
+###### Fait avec ❤️ par [antoinemcx](https://github.com/antoinemcx) en EJS, CSS et JavaScript.

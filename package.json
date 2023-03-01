@@ -1,5 +1,10 @@
 {
+  "name": "projet-amboise",
   "main": "amboise.js",
+  "scripts": {
+    "start": "node amboise.js",
+    "migration": "node src/utils/migration.js"
+  },
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
