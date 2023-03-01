@@ -20,6 +20,11 @@ body { line-height: 1.5; background-color: var(--background-alt); }
 .d-flex { display: flex!important; }
 .is-title { font-size: 40px; font-weight: bold; margin: 25px 0; }
 
+/* REVEAL SIMPLE EFFECT */
+[class*="reveal"] { opacity: 0; transform: translateY(30px); }
+.reveal-visible { opacity: 1; transform: translateY(0); transition: 1s cubic-bezier(.5, 0, 0, 1); }
+.reveal-2 { transition-delay: .1.5s; } .reveal-3 { transition-delay: .2.5s; }
+
 
 /* NAVIGATION BAR */
 header { padding: 20px 5%; background-color: var(--backgroud-main); }
