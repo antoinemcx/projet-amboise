@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/logo.png" class="flavicon">
+        <title>Projet Amboise — Accueil</title>
+        <meta name="og:image" content="/img/logo.png">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+
+    <body>
+        <div class="home__main">
+            <header><%- include('./parts/header'); -%></header>
+
+            <div class="container home__main-container">
+                <h2 class="title">Projet Amboise</h2>
+                <h1 class="subtitle mt-4">Affrontez vos amis dans l'enceinte de <i>Sainte-Marie</i> dans Projet Amboise.</h1>
+                <h1 class="subtitle">Créé par des terminales, ce projet aidera au financement du bal des terminales.</h1>
+
+                <div class="home-buttons">
+                    <a href="/buy" class="main-button">ACHETER LE JEU</a>
+                    <a href="#more" class="second-button">EN SAVOIR PLUS</a>
+                    <a href="#trailer" class="second-button">TRAILER <i class="fa-solid fa-play"></i></a>
+                </div>
+            </div>
+
+            <div class="home__main-bottom d-flex">
+                    <div class="social-icons">
+                        <a href="/discord" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                        <a href="/instagram" target="_blank"><i class="fa-brands fa-instagram" style="font-size:28px;margin-top:-10px"></i></a>
+                        <a href="mailto:support@LESITE.fr" target="_blank"><i class="fa-solid fa-envelope"></i></a> <!-- TODO: email -->
+                    </div>
+
+                    <div class="legal-infos">Projet Amboise © 2023 ・ <a href="/legal">Mentions légales</a></div>
+            </div>
+        </div>
+
+        <div class="home__body">
+            <section id="more"> <!-- TODO: Modifier lien des images (/img/XXX.png) -->
+                <div class="container">
+                    <div class="feature">
+                        <div style="flex-grow: 1">
+                            <div class="feature-title">Une carte inspirée de Sainte-Marie</div>
+                            <p>Sur Projet Amboise, vous jouerez dans une modélisation 3D de Sainte-Marie, notamment la cour de récréation.</p>
+                        </div>
+
+                        <img class="img-2" src="https://media.discordapp.net/attachments/1071849177824378890/1079709047143550986/image.png?width=1093&height=676">
+                    </div>
+                </div>
+                    
+                <div class="container">
+                    <div class="feature">
+                        <img class="img-1" src="https://media.discordapp.net/attachments/1071849177824378890/1080227398102028379/image.png">
+
+                        <div>
+                            <div class="feature-title">Une prise en main rapide</div>
+                            <p>Vous arrivez dans le jeu avec un pistolet laser, si vous savez vous déplacer et tirer : c'est gagné, vous savez jouer.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="feature">
+                        <div style="flex-grow: 1">
+                            <div class="feature-title">Pas qu'un simple jeu</div>
+                            <p>
+                                Projet Amboise est prévu pour aider au financement du bal des terminales. L'acheter c'est aussi aider les terminales.
+                                <br><br>Pour plus d'informations sur Projet Amboise, <a href="/about">cliquez ici</a>.
+                            </p>
+                        </div>
+
+                        <img class="img-2" src="https://media.discordapp.net/attachments/1071849177824378890/1079709047143550986/image.png?width=1093&height=676">
+                    </div>
+                </div>
+            </section>
+
+            <section class="trailer__section" id="trailer">
+                <div class="container">
+                    <div class="is-title">Trailer</div>
+    
+                    <iframe width="1070" height="602" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="contributors__section" id="contributors">
+                <div class="container">
+                    <div class="is-title">Contribueurs</div>
+                </div>
+            </section>
+        </div>
+        
+
+        <!-- --------- JAVASCRIPT FILES -->
+        <script src="/js/main.js"></script>
+    </body>
+</html>

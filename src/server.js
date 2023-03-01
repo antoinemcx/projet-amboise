@@ -36,7 +36,9 @@ module.exports = async () => {
     // ROUTERS LOADING
     console.log("\n*"); console.log(" ")
         const mainRoute = require("./routers/Main");
+        const redirectionRoute = require("./routers/Redirections");
         app.use('/', mainRoute)
+        app.use('/', redirectionRoute)
     sleep(500);
     
     const listener = server.listen(website.port, '127.0.0.1', function() {
