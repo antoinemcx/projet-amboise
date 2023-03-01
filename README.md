@@ -3,11 +3,11 @@
 Projet Amboise est un jeu de tir prenant place dans une modélisation 3D de Sainte-Marie (établissement à Albi, Tarn).
 Ce projet, fait par des terminales, a par ailleurs pour but d'aider au financement du bal des terminales de l'année 2022-2023.
    
-Ce repo est constitué du **bot discord** et du **site internet** de Projet Amboise ; Si vous l'aimez hésitez pas à lâcher une ⭐ !
+Ce repo est composé du **bot discord** et du **site internet** de Projet Amboise ; Si vous aimez, hésitez pas à lâcher une ⭐ !
 
 ## Setup du repo
 
-### 1. Pour la configuration, créez un fichier `config.js` en y remplaçant les valeurs de `config-secret.js`
+### 1. Configuration : créez `config.js` en y remplaçant les valeurs de `config-secret.js`
 
 ### 2. Installation des dépendances
 
