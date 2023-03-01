@@ -1,5 +1,5 @@
 const { website, production } = require('../config');
-global.db = require('./database');
+global.db = require('./utils/database');
 const { sleep } = require('./utils/web_functions');
 
 const http = require("http");

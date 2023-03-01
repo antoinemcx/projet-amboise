@@ -11,7 +11,7 @@ client.commandes = new Collection();
 client.aliases = new Collection();
 cooldowns = new Collection();
 client.color = require('./src/utils/color.js');
-client.db = require('./src/database');
+client.db = require('./src/utils/database');
 
 //LOADER ALL FILE AND COMMANDS
 fs.readdir("./src/bot/command/", (err, files) => {
