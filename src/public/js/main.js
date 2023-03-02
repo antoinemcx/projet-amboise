@@ -24,3 +24,21 @@ const handleIntersect = function(entries, observer) {
 }
 const observer = new IntersectionObserver(handleIntersect, { root: null, rootMargin: '0px', threshold: .1 });
 document.querySelectorAll('[class*="reveal"]').forEach(function(r) { observer.observe(r) });
+
+
+// BACK TO TOP
+$(window).scroll(function() {
+    var height = $(window).scrollTop();
+    if (height > 100) {
+        $('#back2Top').fadeIn();
+    } else {
+        $('#back2Top').fadeOut();
+    }
+});
+$(document).ready(function() {
+    $("#back2Top").click(function(event) {
+        event.preventDefault();
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
+});
