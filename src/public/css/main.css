@@ -16,6 +16,8 @@
 ::-webkit-scrollbar-thumb { background-color: var(--main-color); }
 ::-webkit-scrollbar-track { background-color: var(--backgroud-main); }
 
+body.no-scroll { overflow: hidden; position: fixed; }
+
 a, a:hover { text-decoration: none; }
 body { line-height: 1.5; background-color: var(--background-alt); }
 .d-flex { display: flex!important; }
@@ -65,10 +67,10 @@ header { padding: 20px 5%; background-color: var(--backgroud-main); }
 }
 
 
-/* HOME MAIN ELEMENT */
+/* ___ HOME MAIN ELEMENT */
 .home__main { background-color: var(--backgroud-main); height: 100vh; overflow: hidden; }
 .home__main-container { padding-left: 12%; padding-top: 10.5% }
-.home__main-container .title { font-size: 32.5px; font-weight: bold; }
+.home__main-container .title { font-size: 35px; font-weight: bold; }
 .home__main-container .subtitle, .home__main-container .subtitle i { font-size: 22px; color: var(--text-second) }
 
 .home-buttons { margin-top: 65px; }
@@ -105,8 +107,12 @@ header { padding: 20px 5%; background-color: var(--backgroud-main); }
 .legal-infos a { font-size: 18px; color: var(--main-color) }
 
 
-/* HOME BODY */
+
+/* ___ HOME BODY */
 .home__body { padding-top: 140px; }
+
+
+/* FEATURE SECTION */
 .feature { display: flex; padding-bottom: 100px; justify-content: space-between; }
 .feature img {
     border-radius: 10px; max-height: 300px;
@@ -122,7 +128,61 @@ header { padding: 20px 5%; background-color: var(--backgroud-main); }
 }
 .feature p a { color: var(--main-color); font-size: 20px; }
 
-.trailer__section { padding: 100px 0; background-color: var(--backgroud-main); margin-top: 55px }
-.trailer__section .is-title { margin-top: 0 }
 
+/* MEDIA SECTION */
+.media__section { padding: 100px 0; background-color: var(--backgroud-main); margin-top: 55px }
+.media__section iframe { width: 100%; border-radius: .7rem }
+.media__section .screenshots { display: flex; margin: 0 -15px; }
+.screenshots .main-image, .screenshots .gallery-image { display: flex; }
+.screenshots .main-image img, .screenshots .gallery-image img { width: 100%; border-radius: .7rem; cursor: pointer }
+.screenshots .main-image { width: 50%; margin: 15px; }
+.screenshots .gallery-image { width: 50%; flex-wrap: wrap; }
+.screenshots .gallery-image img { width: calc(50% - 30px); margin: 15px; }
+
+.modal {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0);
+    z-index: 10; display: block; height: 100%;width: 100%;
+    background-color: var(--background-alt);
+}
+.modal.active { transform: translate(-50%, -50%) scale(1); }
+.modal-header { padding: 10px 15px; display: block; border: none; }
+.modal-header .close-button {
+    cursor: pointer; border: none; outline: none;
+    color: var(--main-color); float: right;
+    background: none; font-size: 1.80rem; font-weight: bold;
+}
+.modal-body {
+    padding: 17px 15px; margin-top: 80px;
+    padding-left: 15px; padding-right: 15px;
+    margin-left: auto; margin-right: auto; width: 98%
+}
+
+.slider { height: 75vh; position: relative; }
+.slider_images .slider-img {
+    object-fit: cover; position: absolute;
+    height: 100%; width: 100%;
+    top: 0; opacity: 0;
+    transition: opacity .5s; border-radius: 10px;
+}
+.slider .slider-img.active { opacity: 1 }
+.slider_main { position: relative; height: 100%; width: 100%; justify-content: center; }
+.slider_images, .slider-img { width: 75%!important; }
+.slider i {
+    font-size: 35px; cursor: pointer;
+    top: 50%; transform: translateY(-26%);
+    color: var(--main-color)
+}
+.slider .previous, .slider .next { align-self: center }
+.slider .previous:hover, .slider .next:hover { align-self: center; color: var(--main-color-hover) }
+.slider .previous { margin-right: 25px;  }
+.slider .next { margin-left: 25px; }
+.slider_pagination_bubbles { display: flex; justify-content: center; gap: 1em; }
+.slider_pagination_bubbles span {
+    background: var(--back2top); cursor: pointer;
+    width: .8em; height: .8em; border-radius: 1rem; transition: 0.3s ease width
+}
+.slider_pagination_bubbles .active { background-color: var(--main-color); width: 2em; }
+
+
+/* CONTRIBUTORS SECTION */
 .contributors__section { background-color: var(--backgroud-main); padding-top: 100px; padding-bottom: 30px; }
