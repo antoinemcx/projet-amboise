@@ -3,6 +3,7 @@ const router = express.Router();
 
 const passport = require('passport');
 const bcrypt = require('bcrypt');
+const { channels } = require('../../config');
 console.log("\x1b[36m%s\x1b[0m", "(!) Router Login chargé...");
 
 router.get("/login", (req, res) => {
@@ -23,6 +24,9 @@ router.get("/register", (req, res) => {
 
 router.post("/register", async (req, res) => {
     const { email, pseudo, first_name, last_name, is_stm, password, password_confirm } = req.body;
+    let stm = null;
+    if(is_stm === 'true') { stm = true }
+    else if(is_stm === 'old') { stm = false }
 
     try {
         const search = await global.db.query('SELECT id,username,email FROM users WHERE email = ? or username = ?', [email, pseudo]);
@@ -41,14 +45,21 @@ router.post("/register", async (req, res) => {
             global.db.query(`SELECT * FROM users WHERE id = "${id}"`).then(rows => { if(rows[0] !== undefined) { generateID(15) } })
             return id;
         };
-        let stm = null;
-        if(is_stm === 'true') { stm = true }
-        else if(is_stm === 'old') { stm = false }
 
-        global.db.query('INSERT INTO users (id,username,email,password,stm) VALUES (?,?,?,?,?)', [generateID(15), pseudo, email, hashedPassword, stm], (err, results) => {
+        global.db.query('INSERT INTO users (id,username,email,prenom,nom,password,stm) VALUES (?,?,?,?,?,?,?)', [
+            generateID(15), pseudo, email, first_name, last_name, hashedPassword, stm
+        ], (err, results) => {
             if(err) { return console.log(err) }
-        })
-        return res.render('login/register.ejs', { req, message: ['success', "Utilisateur enregistré avec succès."] }) //todo
+        });
+
+        global.client.channels.cache.get(channels.logs).send({embeds: [{
+            color: global.client.color.messagecolor.embed,
+            title: `Nouvelle inscription sur le site`,
+            description: `Nom : \`${first_name} ${last_name}\`\nEmail : \`${email}\`\n
+Pseudonyme : \`${pseudo}\`\nStatus : \`${stm === null ? 'Extérieur à STM' : (stm === true ? 'Elève de STM' : 'Ancien élève de STM')}\`
+\nDate de création : <t:${Math.round(Date.now()/1000)}:R>`,
+        }]});
+        return res.render('login/register.ejs', { req, message: ['success', "Utilisateur enregistré avec succès."] });
     } catch(e) {
         console.log(e)
         res.redirect('/register')

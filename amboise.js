@@ -10,7 +10,7 @@ client.config = require('./config.js');
 client.commandes = new Collection();
 client.aliases = new Collection();
 cooldowns = new Collection();
-client.color = require('./src/utils/color.js');
+client.color, global.client.color = require('./src/utils/color.js');
 client.db = require('./src/utils/database');
 
 //LOADER ALL FILE AND COMMANDS
