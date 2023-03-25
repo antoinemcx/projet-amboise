@@ -56,6 +56,7 @@ router.post("/register", async (req, res) => {
 })
 
 router.get("/logout", (req, res) => {
+    res.clearCookie('connect.sid');
     res.clearCookie('session');
     res.clearCookie('session.sig');
 

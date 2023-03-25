@@ -10,7 +10,11 @@
     </a>
 
     <ul class="nav__links">
-        <li class="nav-item nav-button"><a href="/login" class="nav-main">Se connecter</a></li>
+        <% if(req.isAuthenticated()) { %>
+            <li class="nav-item nav-button"><a href="/logout" class="nav-main">Se déconnecter</a></li>
+        <% } else { %>
+            <li class="nav-item nav-button"><a href="/login" class="nav-main">Se connecter</a></li>
+        <% } %>
     </ul>
 </nav>
 
