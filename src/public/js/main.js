@@ -51,6 +51,7 @@ document.querySelectorAll('[class*="reveal"]').forEach(function(r) { observer.ob
 $(window).scroll(function() {
     var height = $(window).scrollTop();
     if (height > 100) {
+        if(navMenu.classList.contains('active') === true) { closeMenu() }
         $('#back2Top').fadeIn();
     } else {
         $('#back2Top').fadeOut();
