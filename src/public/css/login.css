@@ -4,7 +4,7 @@
 .form a:hover { text-decoration: underline; }
 
 .container-login {
-    max-width: 400px; margin-top: 100px;
+    max-width: 450px; margin-top: 100px;
     background: var(--background-main);
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -57,3 +57,15 @@
 .button button:hover { background-color: var(--main-color); }
 .form .login-signup { margin-top: 10px; text-align: center; color: var(--text-second) }
 .form .login-signup a { font-size: 17px }
+
+.input-names { display: flex; justify-content: space-between; }
+.input-names .input-field { width: 45% }
+
+.is-user-stm { width: 100%; margin-top: 30px; }
+.is-user-stm p { font-size: 17px; color: var(--text-third); margin-bottom: 0 }
+.is-user-stm_choice { display: flex; width: 100%; justify-content: space-between; }
+.is-user-stm_choice input {
+    margin-left: 5px; position: relative;
+    top: 2px; height: 15px; width: 15px;
+}
+.radio-container, .is-user-stm_choice input { cursor: pointer }

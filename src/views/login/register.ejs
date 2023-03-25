@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/logo.png" class="flavicon">
+        <title>Projet Amboise — Inscription</title>
+        <meta name="og:image" content="/img/logo.png">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/regular.min.css">
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+
+    <body>
+        <div class="home__main">
+            <header><%- include('../parts/header'); -%></header>
+
+            <div class="container container-login" style="max-width: 525px; margin-top: 30px;">
+                <div class="forms" style="height: initial">
+                    <div class="form login">
+                        <span class="title">Inscription</span>
+                        <% if(message && message[0]) { %>
+                            <div style="color: <%= message[0] === 'success' ? `var(--green)` : `var(--red)` %>"><%= message[1] %></div>
+                        <% } %>
+        
+                        <form action="/register" method="POST">
+                            <div class="input-field">
+                                <input type="text" id="email" name="email" placeholder="Email" required>
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="text" id="pseudo" name="pseudo" placeholder="Pseudonyme" required>
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+
+                            <div class="input-names">
+                                <div class="input-field">
+                                    <input type="text" id="first_name" name="first_name" placeholder="Prénom" required>
+                                    <i class="fa-regular fa-user"></i>
+                                </div>
+                                <div class="input-field">
+                                    <input type="text" id="last_name" name="last_name" placeholder="Nom" required>
+                                    <i class="fa-regular fa-user"></i>
+                                </div>
+                            </div>
+
+                            <div class="is-user-stm">
+                                <p>Qui êtes-vous ?</p>
+                                <div class="is-user-stm_choice">
+                                    <label class="radio-container">
+                                        Élève à Sainte-Marie
+                                        <input type="radio" name="is_stm" value="true" required>
+                                    </label>
+                                    
+                                    <label class="radio-container">
+                                        Ancien élève
+                                        <input type="radio" name="is_stm" value="old" required>
+                                    </label>
+                                    
+                                    <label class="radio-container">
+                                        Autre
+                                        <input type="radio" name="is_stm" value="other" required>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="password" class="password" id="password" name="password" placeholder="Mot de passe" required>
+                                <i class="fa-regular fa-hashtag"></i>
+                                <i class="fa-regular fa-eye-slash showPassword" id="showPassword"></i>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="password" id="password_confirm" name="password_confirm" placeholder="Confirmez le mot de passe" required>
+                                <i class="fa-regular fa-hashtag"></i>
+                            </div>
+        
+                            <div class="input-field button">
+                                <button type="submit">S'inscrire</button>
+                            </div>
+                        </form>
+        
+                        <div class="login-signup">
+                            Vous avez déjà un compte ? <a href="/login" class="text signup-link">Connectez-vous</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- --------- JAVASCRIPT FILES -->
+        <script src="/js/main.js"></script>
+        <script src="/js/login-page.js"></script>
+    </body>
+</html>
