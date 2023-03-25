@@ -1,0 +1,59 @@
+.container .form .title { position: relative; font-size: 30px; font-weight: 600; }
+.form { width: 150% }
+.form .input-field { position: relative; height: 50px; width: 100%; margin-top: 30px; }
+.form a:hover { text-decoration: underline; }
+
+.container-login {
+    max-width: 400px; margin-top: 100px;
+    background: var(--background-main);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+.container .forms {
+    display: flex; align-items: center;
+    height: 450px; padding: 25px;
+    transition: height 0.2s ease;
+}
+.container.active .login {
+    margin-left: -50%; opacity: 0;
+    transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+.container.active .forms { height: 600px; }
+.input-field input{
+    position: absolute;
+    height: 100%; width: 100%;
+    padding: 0 35px; border: none;
+    outline: none; background-color: var(--background-main);
+    font-size: 16px;
+    border-bottom: 2px solid rgba(60,62,66);
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+.input-field input:is(:focus, :valid) { border-bottom-color: var(--main-color); }
+.input-field i {
+    position: absolute; top: 50%;
+    transform: translateY(-50%);
+    color: var(--text); font-size: 23px;
+    transition: all 0.2s ease;
+}
+.input-field input:is(:focus, :valid) ~ i{ color: var(--main-color); }
+.input-field i.icon { left: 0; }
+.input-field i.showPassword {
+    right: 0; z-index: 9;
+    cursor: pointer; padding: 10px;
+}
+.form .text { color: var(--text); font-size: 15px; }
+.form a.text { color: var(--main-color); text-decoration: none; }
+.form .button { margin-top: 50px; }
+.form .button button{
+    border: none; color: #fff;
+    font-size: 18.5px; height: 40px;
+    letter-spacing: .5px; border-radius: 6px;
+    background-color: var(--main-color);
+    cursor: pointer; width: 100%;
+    transition: all 0.3s ease;
+}
+.button button:hover { background-color: var(--main-color); }
+.form .login-signup { margin-top: 10px; text-align: center; color: var(--text-second) }
+.form .login-signup a { font-size: 17px }

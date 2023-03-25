@@ -46,7 +46,7 @@ header { padding: 20px 5%; background-color: var(--backgroud-main); }
 .heading-logo, .heading-logo:hover { left: 50%; transform: translateX(-50%); margin-top: -12px; }
 .heading-logo, .heading-logo:hover { position: absolute; }
 .heading-logo img { width: 140px }
-.heading-logo:hover img { opacity: 50%; }
+.heading-logo:hover img { opacity: 60%; }
 
 .nav__links { list-style: none; display: flex; padding-left: 0; }
 .nav__links a { font-weight: 500; color: var(--text); text-decoration: none; }
@@ -184,5 +184,9 @@ header { padding: 20px 5%; background-color: var(--backgroud-main); }
 .slider_pagination_bubbles .active { background-color: var(--main-color); width: 2em; }
 
 
-/* CONTRIBUTORS SECTION */
-.contributors__section { background-color: var(--backgroud-main); padding-top: 100px; padding-bottom: 30px; }
+/* DATA SECTION */
+.data__section { padding-top: 100px; padding-bottom: 40px; }
+.data_container { display: flex; justify-content: space-between; }
+.data_counter a { font-style: bold; font-size: 50px; color: var(--text) }
+.data_counter a:hover { cursor: pointer; }
+.data_counter p { color: var(--text-third); font-size: 18px; }

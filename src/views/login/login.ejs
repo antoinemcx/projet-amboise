@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/logo.png" class="flavicon">
+        <title>Projet Amboise — Connexion</title>
+        <meta name="og:image" content="/img/logo.png">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+
+    <body>
+        <div class="home__main">
+            <header><%- include('../parts/header'); -%></header>
+
+            <div class="container container-login">
+                <div class="forms">
+                    <div class="form login">
+                        <span class="title">Connexion</span>
+                        <% if(message && message[0]) { %>
+                            <span style="margin-left: 10px; color: var(--red)"><%= message[0] %></span>
+                        <% } %>
+        
+                        <form action="/login" method="POST">
+                            <div class="input-field">
+                                <input type="text" id="email" name="email" placeholder="Votre email" required>
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="password" id="password" name="password" placeholder="Votre mot de passe" required>
+                                <i class="fa-regular fa-hashtag"></i>
+                                <i class="fa-regular fa-eye-slash showPassword" id="showPassword"></i>
+                            </div>
+        
+                            <div class="input-field button">
+                                <button type="submit">Se connecter</button>
+                            </div>
+                        </form>
+        
+                        <div class="login-signup">
+                            Pas encore de compte ? <a href="/register" class="text signup-link">Inscrivez-vous</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- --------- JAVASCRIPT FILES -->
+        <script src="/js/main.js"></script>
+        <script src="/js/login-page.js"></script>
+    </body>
+</html>
