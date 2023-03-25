@@ -1,0 +1,39 @@
+
+.computer { display: none; }
+.mobile { display: block; }
+
+/* NAVIGATION BAR */
+header { display: flex; justify-content: space-between!important }
+.heading-logo { z-index: 15; }
+.navbar { position: inherit!important; }
+.nav__links {
+    position: fixed; left: -100%;
+    top: 0; flex-direction: column;
+    background-color: var(--background-alt);
+    width: 75%; padding-top: 5rem;
+    transition: 0.15s; z-index: 10; height: 100%;
+    box-shadow: 100px 0 5px -2px rgba(0, 0, 0, 0.2);
+}
+.nav__links li { padding-top: 25px; }
+.nav__links.active { left: 0; padding-left: 0; }
+.nav-item { padding-top: 25px }
+.nav-link { font-size: 21px!important; }
+.hamburger { display: block; cursor: pointer; z-index: 999 }
+.hamburger.active .bar:nth-child(2) { opacity: 0; }
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* HOME PAGE */
+.home-buttons {
+    display: flex; margin-top: 40px;
+    flex-direction: column; gap: 15px;
+}
+.main-button, .second-button { padding: 8px 40px; text-align: center; }
+
+.social-icons { display: flex; }
+.fa-instagram { margin-top: 0px!important }

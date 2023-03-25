@@ -1,15 +1,34 @@
+<div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</div>
+
 <nav class="navbar">
     <ul class="nav__links">
         <li class="nav-item"><a href="/" class="nav-link nav-main">Accueil</a></li>
         <li class="nav-item"><a href="/about" class="nav-link nav-main">A propos</a></li>
         <li class="nav-item"><a href="/contact" class="nav-link nav-main">Contact</a></li>
+
+        <div class="mobile">
+            <hr style="margin-top: 30px;">
+            <% if(req.isAuthenticated()) { %>
+                <li class="nav-item" style="padding-top:0"><a href="/profile" class="nav-link nav-main">Mon compte</a></li>
+                <li class="nav-item"><a href="/buy" class="nav-link nav-main">Acheter le jeu</a></li>
+                <hr>
+
+                <li class="nav-item" style="padding-top:0"><a href="/logout" class="nav-link nav-main">Se déconnecter</a></li>
+            <% } else { %>
+                <li class="nav-item" style="padding-top:0"><a href="/login" class="nav-link nav-main">Se connecter</a></li>
+            <% } %>
+        </div>
     </ul>
     
     <a class="heading-logo" href="/">
         <img src="/img/logo_850x200" alt="Logo" draggable="false">
     </a>
 
-    <ul class="nav__links">
+    <ul class="nav__links computer">
         <% if(req.isAuthenticated()) { %>
             <li class="nav-item nav-button"><a href="/logout" class="nav-main">Se déconnecter</a></li>
         <% } else { %>

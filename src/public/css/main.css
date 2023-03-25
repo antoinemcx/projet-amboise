@@ -21,6 +21,8 @@ a, a:hover { text-decoration: none; }
 body { line-height: 1.5; background-color: var(--background-alt); }
 .d-flex { display: flex!important; }
 .is-title { font-size: 40px; font-weight: bold; margin: 25px 0; }
+.mobile { display: none; }
+hr { background-color: var(--back2top); width: 90%; }
 
 /* REVEAL SIMPLE EFFECT */
 [class*="reveal"] { opacity: 0; transform: translateY(30px); }
@@ -65,6 +67,17 @@ header { padding: 20px 5%; }
     background-color: var(--text-second);
 }
 
+.hamburger { display: none; }
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--main-color);
+}
+
 
 /* ___ HOME MAIN ELEMENT */
 .first-child { height: 95%; background-image: url("/img/background"); background-size: cover; }
@@ -103,7 +116,7 @@ header { padding: 20px 5%; }
     transition: all 0.3s ease 0s; margin-right: 25px;
 }
 .social-icons a:hover i { color: var(--main-color); }
-.legal-infos { font-size: 18px; color: var(--text-second) }
+.legal-infos, .legal-infos span { font-size: 18px; color: var(--text-second) }
 .legal-infos a { font-size: 18px; color: var(--main-color) }
 
 
