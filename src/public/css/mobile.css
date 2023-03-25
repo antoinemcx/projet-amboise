@@ -28,7 +28,7 @@ header { display: flex; justify-content: space-between!important }
 }
 
 
-/* HOME PAGE */
+/* HOME MAIN ELEMENT */
 .home-buttons {
     display: flex; margin-top: 40px;
     flex-direction: column; gap: 15px;
@@ -37,3 +37,14 @@ header { display: flex; justify-content: space-between!important }
 
 .social-icons { display: flex; }
 .fa-instagram { margin-top: 0px!important }
+
+
+/* HOME BODY */
+.home__body { padding-top: 50px; }
+
+.feature { display: block }
+.feature .img-2 { margin-left: 0 }
+.feature img { max-width: 100% }
+.feature-reverse { display: flex; flex-direction: column-reverse; }
+
+.media__section iframe { height: 250px }

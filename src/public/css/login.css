@@ -69,3 +69,7 @@
     top: 2px; height: 15px; width: 15px;
 }
 .radio-container, .is-user-stm_choice input { cursor: pointer }
+
+@media screen and (max-width: 1250px) {
+    .is-user-stm_choice { flex-direction: column-reverse; }
+}
