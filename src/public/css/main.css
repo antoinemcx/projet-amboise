@@ -41,7 +41,7 @@ body { line-height: 1.5; background-color: var(--background-alt); }
 
 
 /* NAVIGATION BAR */
-header { padding: 20px 5%; background-color: var(--backgroud-main); }
+header { padding: 20px 5%; }
 .heading-logo, .heading-logo:hover { left: 50%; transform: translateX(-50%); margin-top: -12px; }
 .heading-logo, .heading-logo:hover { position: absolute; }
 .heading-logo img { width: 140px }
@@ -67,6 +67,7 @@ header { padding: 20px 5%; background-color: var(--backgroud-main); }
 
 
 /* ___ HOME MAIN ELEMENT */
+.first-child { height: 95%; background-image: url("/img/background"); background-size: cover; }
 .home__main { background-color: var(--backgroud-main); height: 100vh; overflow: hidden; }
 .home__main-container { padding-left: 12%; padding-top: 10.5% }
 .home__main-container .title { font-size: 35px; font-weight: bold; }
