@@ -39,7 +39,7 @@ header { display: flex; justify-content: space-between!important }
 
 
 /* HOME BODY */
-.home__body { padding-top: 50px; }
+.home__body { padding-top: 30px; }
 
 .feature { display: block }
 .feature .img-2 { margin-left: 0 }
