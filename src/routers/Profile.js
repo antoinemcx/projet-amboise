@@ -4,7 +4,7 @@ const moment = require('moment');
 console.log("\x1b[36m%s\x1b[0m", "(!) Router Profile chargé...");
 
 router.get("/profile", (req, res) => {
-    if(!req.isAuthenticated()) { return res.redirect('/login') }
+    if(!req.isAuthenticated()) { return res.render('error.ejs', { req, code: '401' }) }
 
     res.render('profile/view.ejs', { req, createdAt: moment(req.user.createdAt).locale('fr').format('ll') })
 })
