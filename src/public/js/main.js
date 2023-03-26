@@ -19,6 +19,26 @@ function closeMenu() {
 }
 
 
+// DROPDOWN NAVIGATION BAR
+const userDropdown = document.getElementById('user-dropdown');
+function dropdown() {
+    if(window.getComputedStyle(userDropdown).display === 'none') {
+        userDropdown.classList.remove("hide")
+    } else {
+        userDropdown.classList.add('hide')
+    }
+};
+
+window.onclick = function(event) {
+    var $trigger = $("#nav-profile");
+    if($trigger !== event.target && !$trigger.has(event.target).length) {
+        if($('#user-dropdown').is(':visible')) {
+            $('#user-dropdown').addClass('hide')
+        }
+    }
+}
+
+
 // SCROLL DOWN
 $(function() {
     $('a[href*=#]').on('click', function(e) {

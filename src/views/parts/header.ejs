@@ -30,7 +30,17 @@
 
     <ul class="nav__links computer">
         <% if(req.isAuthenticated()) { %>
-            <li class="nav-item nav-button"><a href="/logout" class="nav-main">Se déconnecter</a></li>
+            <li class="nav-item nav-profile" id="nav-profile">
+                <a onclick="dropdown()" class="dropdown-main nav-main"><%= req.user.prenom.split('')[0].toUpperCase() %></a>
+
+                <div id="user-dropdown" class="user-dropdown hide" style="max-width:220px!important;">
+                    <a class="dropdown-item" href="/profile">Mon compte</a>
+                    <a class="dropdown-item" href="/buy">Acheter le jeu</a>
+                
+                    <hr>
+                    <a class="dropdown-item" href="/logout">Se déconnecter</a>
+                </div>
+            </li>
         <% } else { %>
             <li class="nav-item nav-button"><a href="/login" class="nav-main">Se connecter</a></li>
         <% } %>
