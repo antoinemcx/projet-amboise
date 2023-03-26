@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/logo.png" class="flavicon">
+        <title>Projet Amboise — Profil</title>
+        <meta name="og:image" content="/img/logo.png">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/profile.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+
+    <body>
+        <div class="home__main">
+            <header><%- include('../parts/header'); -%></header>
+
+            <div class="container">
+                <section id="info">
+                    <div class="is-title-second pt-5">Votre profil</div>
+    
+                    <div class="profile_info">
+                        <div class="info-element">
+                            <div class="element-name">Nom</div>
+                            <div class="element-body"><%= req.user.prenom %> <%= req.user.nom %></div>
+                        </div>
+                        
+                        <div class="info-element">
+                            <div class="element-name">Email</div>
+                            <div class="element-body"><%= req.user.email %></div>
+                        </div>
+    
+                        <div class="info-element">
+                            <div class="element-name">Création</div>
+                            <div class="element-body"><%= createdAt %></div>
+                        </div>
+                        
+                        <hr>
+                        <div class="info-element">
+                            <div class="element-name">Pseudonyme</div>
+                            <div class="element-body"><%= req.user.username %></div>
+                        </div>
+                        
+                        <div class="info-element">
+                            <div class="element-name">Elève de Sainte-Marie</div>
+                            <div class="element-body"><%= req.user.stm === null ? 'non' : 'oui' %></div>
+                        </div>
+    
+                        <div class="info-element">
+                            <div class="element-name">Jeu</div>
+                            <div class="element-body"><%= req.user.offer === null ? 'non possédé' : 'possédé' %></div>
+                        </div>
+    
+                        <hr>
+                        <div class="info-element profile-buttons">
+                            <a href="/profile/edit" class="edit-profile">Modifier le profil</a>
+                            <a href="/profile/delete" class="delete-profile">Supprimer le profil</a>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="game-message">
+                    <% if(req.user.offer === null) { %>
+                        Vous ne possédez pas le jeu... <a href="/buy">Vous pouvez l'acheter en cliquant ici</a>
+                    <% } else { %>
+                        Vous possédez le jeu, <a href="/download">vous pouvez l'installer en cliquant ici</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- --------- JAVASCRIPT FILES -->
+        <script src="/js/main.js"></script>
+    </body>
+</html>

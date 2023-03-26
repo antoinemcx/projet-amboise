@@ -1,0 +1,33 @@
+
+.home__main { height: inherit!important; min-height: 100vh; }
+
+
+.profile_info {
+    padding: 20px; border-radius: 10px;
+    background-color: var(--background-alt);
+}
+.profile_info .info-element { display: flex; padding: 10px 0; }
+
+@media screen and (max-width: 950px) {
+    .element-name { flex: 0 0 50%!important; max-width: 50%!important; }
+    .profile-buttons { flex-direction: column }
+}
+.element-name {
+    font-size: 18px; max-width: 30%;
+    flex: 0 0 30%; color: var(--text-second);
+}
+.profile-buttons { gap: 20px; }
+.element-body { flex-grow: 2; font-size: 18px; color: var(--text-third) }
+
+.profile_info .edit-profile, .profile_info .delete-profile {
+    font-size: 18px; color: var(--text-second);
+    border-radius: 15px; cursor: pointer; padding: 5px 30px;
+}
+.profile_info .edit-profile { background-color: var(--back2top); }
+.profile_info .edit-profile:hover { transition: .15s; background-color: var(--back2top-hover); }
+.profile_info .delete-profile { background-color: var(--main-color-transparent); }
+.profile_info .delete-profile:hover { transition: .15s; background-color: var(--main-color); }
+
+
+.game-message, .game-message a { padding: 100px 0; font-size: 19px; }
+.game-message a { color: var(--main-color); cursor: pointer }

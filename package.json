@@ -17,6 +17,7 @@
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
     "mariadb": "^3.1.0",
+    "moment": "^2.29.4",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0"
   }

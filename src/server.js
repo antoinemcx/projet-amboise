@@ -44,9 +44,11 @@ module.exports = async () => {
     console.log("\n*"); console.log(" ")
         const mainRoute = require("./routers/Main");
         const loginRoute = require("./routers/Login");
+        const profileRoute = require("./routers/Profile");
         const redirectionRoute = require("./routers/Redirections");
         app.use('/', mainRoute)
         app.use('/', loginRoute)
+        app.use('/', profileRoute)
         app.use('/', redirectionRoute)
     sleep(500);
     
