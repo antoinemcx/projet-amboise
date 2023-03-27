@@ -82,7 +82,7 @@ header { padding: 20px 5%; }
     display: block;
     background-color: var(--background-alt);
     position: absolute; z-index: 1000;
-    transform: translate(-84%, 25px);
+    transform: translate(-80%, 17px);
     padding: 8px; min-width: 210px;
     border-radius: 10px;
     border: solid 1px var(--back2top);
