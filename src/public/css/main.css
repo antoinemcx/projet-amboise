@@ -116,7 +116,7 @@ header { padding: 20px 5%; }
 
 
 /* ___ HOME MAIN ELEMENT */
-.first-child { height: 95%; background-image: url("/img/background"); background-size: cover; }
+.first-child { height: 100%; background-image: url("/img/background"); background-size: cover; }
 .home__main { background-color: var(--backgroud-main); height: 100vh; overflow: hidden; }
 @media screen and (max-height: 590px) {
     .home__main-container { padding-top: 5%!important; }

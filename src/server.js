@@ -50,6 +50,11 @@ module.exports = async () => {
         app.use('/', loginRoute)
         app.use('/', profileRoute)
         app.use('/', redirectionRoute)
+        
+        app.get("*", (req, res) => {
+            res.status(404);
+            res.render('error.ejs', { req, code: '404' })
+        })
     sleep(500);
     
     const listener = server.listen(website.port, '127.0.0.1', function() {
