@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/logo.png" class="flavicon">
+        <title>Projet Amboise — Profil</title>
+        <meta name="og:image" content="/img/logo.png">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/profile.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+
+    <body>
+        <div class="home__main">
+            <header><%- include('../parts/header'); -%></header>
+
+            <div class="container pt-5 delete-section">
+                <div class="is-title-second">Supprimer votre compte</div>
+
+                En supprimant votre compte, toutes vos données seront supprimées.
+                <br>De même <u>si vous avez acheté le jeu</u>, vous ne pourrez pas le récupérer.
+                
+                <form action="/profile/delete" method="POST" class="profile-buttons pt-5">
+                    <button type="submit" class="delete-profile" style="border:none">J'ai compris, supprimer mon profil</button>
+                    <a href="/profile" class="edit-profile">Annuler</a>
+                </form>
+            </div>
+        </div>
+        
+
+        <!-- --------- JAVASCRIPT FILES -->
+        <script src="/js/main.js"></script>
+    </body>
+</html>

@@ -19,15 +19,23 @@
 .profile-buttons { gap: 20px; }
 .element-body { flex-grow: 2; font-size: 18px; color: var(--text-third) }
 
-.profile_info .edit-profile, .profile_info .delete-profile {
+.edit-profile, .delete-profile {
     font-size: 18px; color: var(--text-second);
     border-radius: 15px; cursor: pointer; padding: 5px 30px;
 }
-.profile_info .edit-profile { background-color: var(--back2top); }
-.profile_info .edit-profile:hover { transition: .15s; background-color: var(--back2top-hover); }
-.profile_info .delete-profile { background-color: var(--main-color-transparent); }
-.profile_info .delete-profile:hover { transition: .15s; background-color: var(--main-color); }
+.edit-profile { background-color: var(--back2top); }
+.edit-profile:hover {
+    transition: .15s; color: var(--text-second);
+    background-color: var(--back2top-hover);
+}
+.delete-profile { background-color: var(--main-color-transparent); }
+.delete-profile:hover {
+    transition: .15s; color: var(--text-second);
+    background-color: var(--main-color);
+}
 
 
 .game-message, .game-message a { padding: 100px 0; font-size: 19px; }
 .game-message a { color: var(--main-color); cursor: pointer }
+
+.delete-section { padding-top: 8%!important; }
