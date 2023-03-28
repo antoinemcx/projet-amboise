@@ -9,7 +9,7 @@ console.log("\x1b[36m%s\x1b[0m", "(!) Router Login chargé...");
 router.get("/login", (req, res) => {
     if(req.isAuthenticated()) { return res.redirect('/') }
 
-    res.render('login/login.ejs', { req, message: (req.session.flash && req.session.flash.error) })
+    res.render('profile/login.ejs', { req, message: (req.session.flash && req.session.flash.error) })
 });
 
 router.post("/login", passport.authenticate('local', { failureRedirect: '/login', failureFlash: true, }), (req, res) => {
@@ -19,7 +19,7 @@ router.post("/login", passport.authenticate('local', { failureRedirect: '/login'
 router.get("/register", (req, res) => {
     if(req.isAuthenticated()) { return res.redirect('/') }
 
-    res.render('login/register.ejs', { req, message: (req.session.flash && req.session.flash.error) })
+    res.render('profile/register.ejs', { req, message: (req.session.flash && req.session.flash.error) })
 });
 
 router.post("/register", async (req, res) => {
@@ -31,10 +31,10 @@ router.post("/register", async (req, res) => {
     try {
         const search = await global.db.query('SELECT id,username,email FROM users WHERE email = ? or username = ?', [email, pseudo]);
 
-        if(search[0] !== undefined) { return res.render('login/register.ejs', { req, message: ['error', "Email ou nom d'utilisateur déjà utilisé."] })
-        } else if(pseudo.length < 3 || pseudo.length > 20) { return res.render('login/register.ejs', { req, message: ['error', "Le nom d'utilisateur doit être entre 2 et 32 caractères."] })
-        } else if(password.length < 4 || password.length > 500) { return res.render('login/register.ejs', { req, message: ['error', "Le mot de passe doit être entre 4 and 500 caractères."] })
-        } else if(password !== password_confirm) { return res.render('login/register.ejs', { req, message: ['error', "Les mots de passes ne correspondent pas."] }) }
+        if(search[0] !== undefined) { return res.render('profile/register.ejs', { req, message: ['error', "Email ou nom d'utilisateur déjà utilisé."] })
+        } else if(pseudo.length < 3 || pseudo.length > 20) { return res.render('profile/register.ejs', { req, message: ['error', "Le nom d'utilisateur doit être entre 2 et 32 caractères."] })
+        } else if(password.length < 4 || password.length > 500) { return res.render('profile/register.ejs', { req, message: ['error', "Le mot de passe doit être entre 4 and 500 caractères."] })
+        } else if(password !== password_confirm) { return res.render('profile/register.ejs', { req, message: ['error', "Les mots de passes ne correspondent pas."] }) }
 
         const hashedPassword = await bcrypt.hash(password, 10)
         function generateID(length) {
@@ -59,7 +59,7 @@ router.post("/register", async (req, res) => {
 Pseudonyme : \`${pseudo}\`\nStatus : \`${stm === null ? 'Extérieur à STM' : (stm === true ? 'Elève de STM' : 'Ancien élève de STM')}\`
 \nDate de création : <t:${Math.round(Date.now()/1000)}:R>`,
         }]});
-        return res.render('login/register.ejs', { req, message: ['success', "Utilisateur enregistré avec succès."] });
+        return res.render('profile/register.ejs', { req, message: ['success', "Utilisateur enregistré avec succès."] });
     } catch(e) {
         console.log(e)
         res.redirect('/register')

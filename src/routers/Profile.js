@@ -33,7 +33,7 @@ Status : \`${req.user.stm === null ? 'Extérieur à STM' : (req.user.stm === tru
 \nDate de création : ${moment(req.user.createdAt).locale('fr').format('ll')}`,
         }]});
         
-        return res.render('login/register.ejs', { req, message: ['success', "Utilisateur supprimé avec succès."] });
+        return res.render('profile/register.ejs', { req, message: ['success', "Utilisateur supprimé avec succès."] });
     } catch(e) { console.log(e) }
 })
 
