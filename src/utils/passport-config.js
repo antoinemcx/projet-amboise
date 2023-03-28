@@ -6,7 +6,7 @@ async function initialize(passport) {
     const authentificateUser = async (email, password, done) => {
         const user = await getUserByEmailOrUsername(email)
         if(user === undefined) {
-            return done(null, false, { message: "Email incorrecte." })
+            return done(null, false, { message: "Email ou pseudo incorrecte." })
         }
 
         try {

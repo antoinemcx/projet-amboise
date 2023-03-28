@@ -39,3 +39,4 @@
 .game-message a { color: var(--main-color); cursor: pointer }
 
 .delete-section { padding-top: 8%!important; }
+.delete-button { border: none; line-height: normal; margin-right: 10px; }
