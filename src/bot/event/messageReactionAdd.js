@@ -12,6 +12,9 @@ module.exports = async (client, reaction, user) => {
 
         if(emote === '1080542768839020615') {
             member.roles.add('1080536418956357794') // STM
+            member.roles.add('1071838345883299982') // MEMBRES
+        } else if (emote === '🌐') {
+            member.roles.add('1071838345883299982') // MEMBRES
         }
 
         else if (['6️⃣', '5️⃣', '4️⃣', '3️⃣', '2️⃣', '1️⃣', '🇹'].includes(emote)) {
