@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/logo.png" class="flavicon">
+        <title>Projet Amboise — Profil</title>
+        <meta name="og:image" content="/img/logo.png">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/profile.css">
+        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+
+    <body>
+        <div class="home__main">
+            <header><%- include('../parts/header'); -%></header>
+
+            <% if(message) { %>
+                <div class="container" style="color: var(--red)"><%= message %></div>
+            <% } %>
+
+            <style>
+                @media screen and (max-width: 1250px) {
+                    .edit-profile_container { display: block!important; margin-top: 0!important; }
+                    .edit-profile-password { max-width: 525px; margin-top: 20px!important; margin-bottom: 50px; }
+                }
+                .edit-profile_container { display: flex; justify-content: space-evenly; margin-top: 20px; margin-bottom: 50px; }
+                .edit-profile-password { max-width: 550px; height: 100% }
+            </style>
+
+            <div class="container edit-profile_container">
+                <div>
+                    <div class="container-login" style="max-width: 525px;">
+                        <div class="forms" style="height: initial">
+                            <div class="form login">
+                                <span class="title">Informations personnelles</span>
+                
+                                <form action="/profile/edit/info" method="POST">
+                                    <div class="input-field">
+                                        <input type="text" id="pseudo" name="pseudo" value="<%= req.user.username %>" placeholder="Pseudonyme" required>
+                                        <i class="fa-regular fa-user"></i>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <input type="text" id="first_name" name="first_name" value="<%= req.user.prenom %>" placeholder="Prénom" required>
+                                        <i class="fa-regular fa-user"></i>
+                                    </div>
+                                    <div class="input-field">
+                                        <input type="text" id="last_name" name="last_name" value="<%= req.user.nom %>" placeholder="Nom" required>
+                                        <i class="fa-regular fa-user"></i>
+                                    </div>
+
+                                    <div class="is-user-stm">
+                                        <p>Êtes-vous un(e) élève de Sainte-Marie ?</p>
+                                        <div class="is-user-stm_choice" style="display: block">
+                                            <label class="radio-container" style="margin-right: 25px;">
+                                                Oui
+                                                <% if(req.user.stm === null) { %>
+                                                    <input type="radio" name="is_stm" value="true" required>
+                                                <% } else { %>
+                                                    <input type="radio" name="is_stm" value="true" required checked>
+                                                <% } %>
+                                            </label>
+                                            
+                                            <label class="radio-container">
+                                                Non
+                                                <% if(req.user.stm === null) { %>
+                                                    <input type="radio" name="is_stm" value="false" required checked>
+                                                <% } else { %>
+                                                    <input type="radio" name="is_stm" value="false" required>
+                                                <% } %>
+                                            </label>
+                                        </div>
+                                    </div>
+                
+                                    <div class="input-field button">
+                                        <button type="submit">Enregistrer le profil</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <div class="container-login" style="max-width: 525px; margin-top: 20px;">
+                        <div class="forms" style="height: initial">
+                            <div class="form login">
+                                <span class="title">Changer d'email</span>
+                                
+                                <form action="/profile/edit/email" method="POST">
+                                    <span style="font-size: 18px;">
+                                        Actuelle : <%= req.user.email %>
+                                    </span>
+
+                                    <div class="input-field">
+                                        <input type="text" id="email" name="email" placeholder="Nouvelle email" required>
+                                        <i class="fa-regular fa-envelope"></i>
+                                    </div>
+                                    
+                                    <div class="input-field">
+                                        <input type="password" class="password" id="current_password" name="current_password" placeholder="Mot de passe actuel" required>
+                                        <i class="fa-regular fa-hashtag"></i>
+                                    </div>
+
+                                    <div class="input-field button">
+                                        <button type="submit">Modifier</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="container-login edit-profile-password">
+                    <div class="forms" style="height: initial">
+                        <div class="form login">
+                            <span class="title">Changer le mot de passe</span>
+                            
+                            <form action="/profile/edit/password" method="POST">
+                                <div class="input-field">
+                                    <input type="password" class="password" id="current_password" name="current_password" placeholder="Mot de passe actuel" required>
+                                    <i class="fa-regular fa-hashtag"></i>
+                                </div>
+
+                                <div class="input-field">
+                                    <input type="password" class="password" id="password" name="password" placeholder="Nouveau mot de passe" required>
+                                    <i class="fa-regular fa-hashtag"></i>
+                                </div>
+
+                                <div class="input-field">
+                                    <input type="password" id="password_confirm" name="password_confirm" placeholder="Confirmez le mot de passe" required>
+                                    <i class="fa-regular fa-hashtag"></i>
+                                </div>
+
+                                <div class="input-field button">
+                                    <button type="submit">Modifier</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of display flex -->
+        </div>
+        
+
+        <!-- --------- JAVASCRIPT FILES -->
+        <script src="/js/main.js"></script>
+    </body>
+</html>

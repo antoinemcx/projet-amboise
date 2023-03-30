@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/logo.png" class="flavicon">
+        <title>Projet Amboise — Profil</title>
+        <meta name="og:image" content="/img/logo.png">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+    
+    <body>
+        <div class="home__main">
+            <div class="first-child" style="background-image: url('/img/errorBackground')">
+                <header><%- include('../parts/header'); -%></header>
+
+                <div class="container home__main-container">
+                    <h1 class="error-message mt-4">Utilisateur modifié avec succès !</h1>
+                    <h1 class="subtitle">Les modifications ont été appliquées, veuillez vous reconnecter</h1>
+
+                    <div class="home-buttons">
+                        <a href="/login" class="main-button">SE RECONNECTER</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .home__main-container { padding-left: 20%; padding-top: 10% }
+            @media screen and (max-width: 980px) {
+                .home__main-container { padding-left: 10% }
+            }
+            .home__main-container .error-message { font-size: 30px; }
+            .home__main-container .subtitle { font-size: 25px; max-width: 425px; }
+        </style>
+        
+
+        <!-- --------- JAVASCRIPT FILES -->
+        <script src="/js/main.js"></script>
+    </body>
+</html>
