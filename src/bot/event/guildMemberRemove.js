@@ -1,4 +1,4 @@
-const { channels } = require('../../../config');
+const { channels } = require('../../../config').discord;
 
 module.exports = async (client, member) => {
     const channel = client.channels.cache.get(channels.welcome);

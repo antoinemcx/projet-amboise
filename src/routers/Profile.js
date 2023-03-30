@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const moment = require('moment');
-const { channels } = require('../../config');
+const { channels } = require('../../config').discord;
 console.log("\x1b[36m%s\x1b[0m", "(!) Router Profile chargé...");
 
 router.get("/profile", (req, res) => {

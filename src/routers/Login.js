@@ -3,7 +3,7 @@ const router = express.Router();
 
 const passport = require('passport');
 const bcrypt = require('bcrypt');
-const { channels } = require('../../config');
+const { channels } = require('../../config').discord;
 console.log("\x1b[36m%s\x1b[0m", "(!) Router Login chargé...");
 
 router.get("/login", (req, res) => {

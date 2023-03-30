@@ -16,7 +16,11 @@ module.exports = {
         secret: '',
     },
   
-    channels: { //Channels IDs
-        welcome: "",
+    discord: {
+        server_id: "",
+        channels: { //Channels IDs
+            welcome: "",
+            logs: ""
+        }
     }
 };
