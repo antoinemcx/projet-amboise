@@ -18,7 +18,7 @@ module.exports = async () => {
 
     app.set('view engine', 'ejs');
     app.set('views', 'src/views');
-    app.use(express.static("src/public", { extensions:['pdf', 'jpg', 'png', 'mp4', 'gif', 'exe'] }));
+    app.use(express.static("src/public", { extensions:['pdf', 'jpg', 'png', 'mp4', 'gif', 'exe', 'zip'] }));
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
