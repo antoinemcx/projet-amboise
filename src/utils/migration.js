@@ -1,5 +1,4 @@
 const db = require('./database');
-// TODO: à vérifier
 
 db.query(`CREATE TABLE IF NOT EXISTS \`users\` (
     \`id\` varchar(100) PRIMARY KEY NOT NULL,
