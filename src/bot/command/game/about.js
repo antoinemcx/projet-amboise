@@ -10,7 +10,7 @@ module.exports = {
         const msg = await message.reply(`Chargement...`);
 
         const accountCount = await client.db.query('SELECT COUNT(*) AS count FROM users;');
-        const gameCount = await client.db.query('SELECT COUNT(*) AS count FROM users WHERE offer != 0;');
+        const gameCount = await client.db.query('SELECT COUNT(*) AS count FROM users WHERE game != 0;');
         const supposedMoney = parseInt(gameCount[0].count) * 7;
 
         const website_url = "https://amboise.antoinemcx.fr" //TODO

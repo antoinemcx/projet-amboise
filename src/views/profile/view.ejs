@@ -56,7 +56,7 @@
     
                         <div class="info-element">
                             <div class="element-name">Jeu</div>
-                            <div class="element-body"><%= req.user.offer === null ? 'non possédé' : 'possédé' %></div>
+                            <div class="element-body"><%= req.user.game === null ? 'non possédé' : 'possédé' %></div>
                         </div>
     
                         <hr>
@@ -68,7 +68,7 @@
                 </section>
 
                 <div class="game-message">
-                    <% if(req.user.offer === null) { %>
+                    <% if(req.user.game === null) { %>
                         Vous ne possédez pas le jeu... <a href="/buy">Vous pouvez l'acheter en cliquant ici</a>
                     <% } else { %>
                         Vous possédez le jeu, <a href="/download">vous pouvez l'installer en cliquant ici</a>

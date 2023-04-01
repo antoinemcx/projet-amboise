@@ -10,7 +10,9 @@ db.query(`CREATE TABLE IF NOT EXISTS \`users\` (
     \`password\` varchar(500) NOT NULL,
     \`createdAt\` date NOT NULL DEFAULT current_timestamp(),
     \`stm\` varchar(50) DEFAULT NULL,
-    \`offer\` varchar(50) DEFAULT NULL
+    \`game\` varchar(50) DEFAULT NULL,
+    \`rendering\` varchar(50) DEFAULT NULL,
+    \`beta\` varchar(50) DEFAULT NULL,
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 `, (err) => {
