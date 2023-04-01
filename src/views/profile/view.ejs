@@ -27,7 +27,7 @@
                 <section id="info">
                     <div class="is-title-second pt-5">Votre profil</div>
     
-                    <div class="profile_info">
+                    <div class="profile_info" style="margin-bottom: 50px;">
                         <div class="info-element">
                             <div class="element-name">Nom</div>
                             <div class="element-body"><%= req.user.prenom %> <%= req.user.nom %></div>
@@ -56,7 +56,7 @@
     
                         <div class="info-element">
                             <div class="element-name">Jeu</div>
-                            <div class="element-body"><%= req.user.game === null ? 'non possédé' : 'possédé' %></div>
+                            <div class="element-body"><%= req.user.game === null ? 'non possédé' : 'possédé' %> <%= req.user.game === null && req.user.beta !== null ? "(mais bêta possédée)" : '' %></div>
                         </div>
     
                         <hr>
@@ -66,6 +66,34 @@
                         </div>
                     </div>
                 </section>
+
+                <% if(req.user.beta !== null) { %>
+                    <section id="beta" class="beta-download_section">
+                        <div class="is-title-second">Télécharger la bêta</div>
+
+                        <div class="beta-download">
+                            <div class="download-card">
+                                <div class="download-card-logo">
+                                    <i class="fa-brands fa-windows"></i>
+                                </div>
+
+                                <button>
+                                    <i class="fa-solid fa-download"></i> Windows
+                                </button>
+                            </div>
+                            
+                            <div class="download-card">
+                                <div class="download-card-logo">
+                                    <i class="fa-brands fa-apple"></i>
+                                </div>
+
+                                <button>
+                                    <i class="fa-solid fa-download"></i> Mac
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                <% } %>
 
                 <div class="game-message">
                     <% if(req.user.game === null) { %>

@@ -35,8 +35,26 @@
 }
 
 
-.game-message, .game-message a { padding: 100px 0; font-size: 19px; }
+.game-message, .game-message a { padding-bottom: 50px; padding-top: 75px; font-size: 19px; }
 .game-message a { color: var(--main-color); cursor: pointer }
+
+
+.beta-download_section { padding: 50px 0; }
+.beta-download { display: flex; text-align: center }
+.download-card {
+    margin-right: 35px; width: 275px; min-height: 325px;
+    background-color: var(--background-alt); border-radius: 10px;
+}
+.download-card-logo { text-align: center; padding: 50px 0; }
+.download-card-logo i { font-size: 100px; }
+.download-card button {
+    margin-top: 25px; border: none; cursor: pointer;
+    background-color: var(--back2top);
+    padding: 15px; width: 85%; border-radius: 5px;
+}
+.download-card button:hover { background-color: var(--back2top-hover); }
+.download-card button i { margin-right: 10px; }
+
 
 .delete-section { padding-top: 8%!important; }
 .delete-button { border: none; line-height: normal; margin-right: 10px; }
