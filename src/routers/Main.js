@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { discord } = require('../../config');
+const path = require('path');
 console.log("\x1b[36m%s\x1b[0m", "(!) Router Main chargé...");
 
 router.get("/", async (req, res) => {
@@ -14,6 +15,10 @@ router.get("/", async (req, res) => {
 
 router.get("/about", (req, res) => {
     res.render('about.ejs', { req })
+})
+
+router.post('/windows-beta', (req, res) => {
+    res.sendFile(path.resolve('src/download/windows-beta.zip'))
 })
 
 module.exports = router;
