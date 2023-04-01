@@ -88,62 +88,8 @@
                     </div>
                 </div>
             </section>
-
-            <section class="media__section" id="medias">
-                <% gallery_images = [
-                    "/img/image-4",
-
-                    "/img/image-5",
-                    "/img/image-6",
-                    "/img/image-7",
-                    "/img/image-8"
-                ] %>
-                <div class="container reveal">
-                    <div class="is-title">Médias</div>
-
-                    <!-- TODO: Afficher trailer -->
-                    <!-- <iframe width="1070" height="602" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-                    
-                    <div class="screenshots">
-                        <div class="main-image">
-                            <img src="<%= gallery_images[0] %>" onclick="openSlider(0)">
-                        </div>
-                        
-                        <div class="gallery-image">
-                            <% gallery_images.slice(1).forEach((imageURL, index) => { %>
-                                <img src="<%= imageURL %>" onclick="openSlider(<%= index+1 %>)">
-                            <% }) %>
-                        </div>
-                    </div>
-                </div>
-            </section>
             
-            <div class="modal" id="modal">
-                <div class="modal-header"><button data-modal-close class="close-button">X</button></div>
-
-                <div class="modal-body">
-                    <div class="slider">
-                        <div class="slider_main d-flex">
-                            <div class="previous"><i class="fas fa-chevron-left"></i></div>
-
-                            <div class="slider_images">
-                                <% gallery_images.forEach(imageURL => { %>
-                                    <img src="<%= imageURL %>" class="slider-img">
-                                <% }) %>
-                            </div>
-
-                            <div class="next"><i class="fas fa-chevron-right"></i></div>
-                        </div>
-
-                        <div class="slider_pagination_bubbles pt-4">
-                            <% gallery_images.forEach(imageURL => { %>
-                                <span></span>
-                            <% }) %>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="overlay"></div>
+            <%- include('./parts/media_section'); -%>
 
             <section class="data__section" id="data">
                 <div class="container reveal">

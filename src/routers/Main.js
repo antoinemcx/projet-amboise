@@ -12,4 +12,8 @@ router.get("/", async (req, res) => {
     res.render('index.ejs', { req, accountCount: accountCount[0].count, gameCount: gameCount[0].count, supposedMoney,  memberCount })
 })
 
+router.get("/about", (req, res) => {
+    res.render('about.ejs', { req })
+})
+
 module.exports = router;

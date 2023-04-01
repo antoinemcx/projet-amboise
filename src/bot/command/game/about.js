@@ -13,7 +13,7 @@ module.exports = {
         const gameCount = await client.db.query('SELECT COUNT(*) AS count FROM users WHERE game != 0;');
         const supposedMoney = parseInt(gameCount[0].count) * 7;
 
-        const website_url = "https://amboise.antoinemcx.fr" //TODO
+        const website_url = "https://projet-amboise.fr"
         const trailer_url = "https://youtu.be/dQw4w9WgXcQ" //TODO
 
         msg.delete();

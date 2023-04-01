@@ -149,7 +149,7 @@ function closeSlider(modal) {
     modal.classList.remove('active');
     
     $('body').removeClass('no-scroll');
-    window.location.href = window.location.origin + '#medias'
+    window.location.href = window.location.origin + window.location.pathname + '#medias'
 };
 
 closeModalButtons.addEventListener('click', () => { closeSlider(modal); })

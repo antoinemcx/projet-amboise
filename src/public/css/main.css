@@ -244,3 +244,14 @@ header { padding: 20px 5%; }
 .data_counter a { font-style: bold; font-size: 50px; color: var(--text) }
 .data_counter a:hover { cursor: pointer; }
 .data_counter p { color: var(--text-third); font-size: 18px; }
+
+
+/* ABOUT SECTION */
+.about__section {
+    padding-top: 5%; color: var(--text-second);
+    font-size: 18px; line-height: 2;
+}
+.about__section span { color: var(--text); font-size: 18px; }
+.about__section a { color: var(--main-color); font-size: 18px; }
+.about__section i { font-size: 18px; }
+.about__section a:hover { color: var(--main-color-hover); font-size: 18px; }
