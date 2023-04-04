@@ -46,10 +46,12 @@ module.exports = async () => {
         const loginRoute = require("./routers/Login");
         const profileRoute = require("./routers/Profile");
         const redirectionRoute = require("./routers/Redirections");
+        const paymentRoute = require("./routers/Payment");
         app.use('/', mainRoute)
         app.use('/', loginRoute)
-        app.use('/', profileRoute)
+        app.use('/profile', profileRoute)
         app.use('/', redirectionRoute)
+        app.use('/buy', paymentRoute)
         
         app.get("*", (req, res) => {
             res.status(404);

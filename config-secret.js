@@ -22,5 +22,10 @@ module.exports = {
             welcome: "",
             logs: ""
         }
+    },
+
+    sandbox_paypal: { //Business sandbox account
+        client_id: "",
+        client_secret: ""
     }
 };
