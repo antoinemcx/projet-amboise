@@ -10,6 +10,10 @@ paypal.configure({
     'client_secret': sandbox_paypal.client_secret
 })
 
+router.get('/', (req, res) => {
+    res.render('buy.ejs', { req })
+})
+
 router.post('/', (req, res) => {
     // TODO
 })
