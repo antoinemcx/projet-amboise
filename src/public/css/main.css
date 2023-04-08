@@ -1,11 +1,11 @@
 @import url('https://fonts.cdnfonts.com/css/whitney-2');
 
 :root {
-    --backgroud-main: #333335; --background-alt: #29292A;
+    --backgroud-main: #2f3333; --background-alt: #272a2a;
     --text: #F1F1F1; --text-second: #dddddd; --text-third: #b4b4b4;
-    --main-color: rgb(211, 67, 67); --main-color-hover: rgb(221, 70, 70);
+    --main-color: #d34343; --main-color-hover: #dd4646;
     --main-color-transparent: rgba(211, 67, 67, 0.692);
-    --back2top: #38383a; --back2top-hover: #444447;
+    --back2top: #383e3e; --back2top-hover: #424848;
 }
 * {
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
