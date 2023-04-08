@@ -5,19 +5,19 @@ const bcrypt = require('bcrypt');
 const { channels } = require('../../config').discord;
 console.log("\x1b[36m%s\x1b[0m", "(!) Router Profile chargé...");
 
-router.get("/profile", (req, res) => {
+router.get("/", (req, res) => {
     if(!req.isAuthenticated()) { return res.render('error.ejs', { req, code: '401' }) }
 
     res.render('profile/view.ejs', { req, createdAt: moment(req.user.createdAt).locale('fr').format('ll') })
 })
 
-router.get("/profile/delete", (req, res) => {
+router.get("/delete", (req, res) => {
     if(!req.isAuthenticated()) { return res.redirect('/login') }
 
     res.render('profile/delete.ejs', { req })
 })
 
-router.post("/profile/delete", async (req, res) => {
+router.post("/delete", async (req, res) => {
     try {
         await global.db.query('DELETE FROM users WHERE id = ?', [req.user.id])
         
@@ -38,13 +38,13 @@ Status : \`${req.user.stm === null ? 'Extérieur à STM' : (req.user.stm === tru
     } catch(e) { console.log(e) }
 })
 
-router.get("/profile/edit", (req, res) => {
+router.get("/edit", (req, res) => {
     if(!req.isAuthenticated()) { return res.redirect('/login') }
 
     res.render('profile/edit.ejs', { req, message: null })
 })
 
-router.post("/profile/edit/info", async (req, res) => {
+router.post("/edit/info", async (req, res) => {
     const { pseudo, first_name, last_name, is_stm } = req.body;
     let stm = null;
     if(is_stm === 'true') { stm = true }
@@ -80,7 +80,7 @@ Status : \`${req.user.stm === null ? 'Extérieur à STM' : 'Elève de STM'}\` ->
     }
 })
 
-router.post("/profile/edit/email", async (req, res) => {
+router.post("/edit/email", async (req, res) => {
     const { email, current_password } = req.body;
 
     try {
@@ -114,7 +114,7 @@ router.post("/profile/edit/email", async (req, res) => {
     }
 })
 
-router.post("/profile/edit/password", async (req, res) => {
+router.post("/edit/password", async (req, res) => {
     const { current_password, password, password_confirm } = req.body;
 
     try {
