@@ -20,7 +20,7 @@ module.exports = {
 
         message.reply({embeds: [{
             color: client.color.messagecolor.embed,
-            description: `**Affrontez vos amis dans l'enceinte de *Sainte-Marie* dans Projet Amboise !**\nCréé par des terminales, ce projet aidera au financement du bal des terminales.
+            description: `**Affrontez vos amis dans l'enceinte de *Sainte-Marie* dans Projet Amboise !**\nCréé par des terminales, ce projet aidera au financement d'une soirée.
 \nSur Projet Amboise, vous jouerez dans une modélisation 3D de Sainte-Marie, notamment la cour de récréation, avec un pistolet laser.\n‎`,
             fields: [{
                 name: 'Joueurs inscrits', value: accountCount[0].count.toString(), inline: true

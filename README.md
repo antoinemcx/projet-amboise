@@ -1,7 +1,7 @@
 # Projet Amboise - Site internet [![Stars](https://img.shields.io/github/stars/antoinemcx/projet-amboise)](https://github.com/antoinemcx/projet-amboise) [![Discord](https://img.shields.io/badge/-Discord-7389D8?logo=discord&logoColor=ffffff&labelColor=6A7EC2)](https://discord.gg/JhRhU2cKVQ)
 
 Projet Amboise est un jeu de tir prenant place dans une modélisation 3D de Sainte-Marie (établissement à Albi, Tarn).
-Ce projet, fait par des terminales, a par ailleurs pour but d'aider au financement du bal des terminales de l'année 2022-2023.
+Ce projet, fait par des terminales, a par ailleurs pour but d'aider au financement d'une soirée pour l'année 2022-2023.
    
 Ce repo est composé du **bot discord** et du **site internet** de Projet Amboise ; Si vous aimez, hésitez pas à lâcher une ⭐ !
 
