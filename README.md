@@ -31,7 +31,7 @@ $ npm run migration
 ### 4. Lancement du bot
 
 ```sh
-$ npm run start
+$ npm start
 ```
 ‎
    
