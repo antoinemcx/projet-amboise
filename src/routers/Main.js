@@ -21,4 +21,8 @@ router.post('/windows-beta', (req, res) => {
     res.sendFile(path.resolve('src/download/windows-beta.zip'))
 })
 
+router.get("/legal", (req, res) => {
+    res.render('legal.ejs', { req })
+})
+
 module.exports = router;
