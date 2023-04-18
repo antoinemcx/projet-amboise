@@ -41,10 +41,12 @@
                     <h1 class="error-message mt-4"><%= errorMessage %></h1>
                     <h1 class="subtitle"><%- errorSubtitle %></h1>
 
-                    <div class="home-buttons">
-                        <a href="/" class="main-button">ACCUEIL</a>
-                        <a href="<%= secondButton[1] %>" class="second-button"><%= secondButton[0] %></a>
-                    </div>
+                    <% if(code !== '503') { %>
+                        <div class="home-buttons">
+                            <a href="/" class="main-button">ACCUEIL</a>
+                            <a href="<%= secondButton[1] %>" class="second-button"><%= secondButton[0] %></a>
+                        </div>
+                    <% } %>
                 </div>
             </div>
         </div>
