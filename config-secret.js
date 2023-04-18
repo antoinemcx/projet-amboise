@@ -3,6 +3,7 @@ module.exports = {
     prefix: 'a!',
     owners: [""], //Owner ID
     production: true/false,
+    maintenance: true/false,
 
     db: {
         host: 'localhost',

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const paypal = require("paypal-rest-sdk");
 const { sandbox_paypal } = require('../../config');
+const { checkMaintenance } = require('../utils/web_functions');
 console.log("\x1b[36m%s\x1b[0m", "(!) Router Payment chargé...");
 
 paypal.configure({
@@ -10,7 +11,7 @@ paypal.configure({
     'client_secret': sandbox_paypal.client_secret
 })
 
-router.get('/', (req, res) => {
+router.get('/', checkMaintenance, (req, res) => {
     res.render('buy.ejs', { req })
 })
 

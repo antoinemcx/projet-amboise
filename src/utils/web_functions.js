@@ -1,3 +1,5 @@
+const { maintenance } = require("../../config");
+
 function sleep(milliseconds) {
     const date = Date.now();
     let currentDate = null;
@@ -29,4 +31,9 @@ async function getUserById(id) {
     });
 };
 
-module.exports = { sleep, getUserByEmailOrUsername, getUserById };
+async function checkMaintenance(req, res, next) {
+    if(maintenance === true && req.isAuthenticated()) { return next(); }
+    res.render('error.ejs', { req, code: '503' })
+}
+
+module.exports = { sleep, getUserByEmailOrUsername, getUserById, checkMaintenance };

@@ -25,6 +25,9 @@
             errorMessage = "Autorisation requise !";
             errorSubtitle = "On dirait que vous n'êtes pas connecté ou n'avez pas la permission."
             secondButton = ["SE CONNECTER", "/login"];
+        } else if(code === '503') {
+            errorMessage = "Site en maintenance...",
+            errorSubtitle = "Le site est pour l'instant inaccessible mais arrive bientôt !<br>Projet Amboise prépare de nouvelles surprises alors revenez vite."
         }
     %>
 
@@ -36,7 +39,7 @@
                 <div class="container home__main-container">
                     <h2 class="title"><%= code %></h2>
                     <h1 class="error-message mt-4"><%= errorMessage %></h1>
-                    <h1 class="subtitle"><%= errorSubtitle %></h1>
+                    <h1 class="subtitle"><%- errorSubtitle %></h1>
 
                     <div class="home-buttons">
                         <a href="/" class="main-button">ACCUEIL</a>
@@ -47,7 +50,7 @@
         </div>
 
         <style>
-            .home__main-container { padding-left: 20%; padding-top: 10% }
+            .home__main-container { padding-left: 20%; padding-top: 8.5% }
             @media screen and (max-width: 980px) {
                 .home__main-container { padding-left: 10% }
             }
