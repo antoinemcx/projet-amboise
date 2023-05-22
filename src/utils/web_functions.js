@@ -32,6 +32,7 @@ async function getUserById(id) {
 };
 
 async function checkMaintenance(req, res, next) {
+    if(maintenance === false) { return next(); } 
     if(maintenance === true && req.isAuthenticated()) { return next(); }
     res.render('error.ejs', { req, code: '503' })
 }
