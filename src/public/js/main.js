@@ -72,8 +72,10 @@ $(window).scroll(function() {
     var height = $(window).scrollTop();
     if (height > 100) {
         if(navMenu.classList.contains('active') === true) { closeMenu() }
+        $('.tempo-alert').fadeOut(); //TODO : temporaire
         $('#back2Top').fadeIn();
     } else {
+        $('.tempo-alert').fadeIn(); //TODO : temporaire
         $('#back2Top').fadeOut();
     }
 });
