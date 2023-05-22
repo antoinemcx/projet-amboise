@@ -132,6 +132,14 @@ header { padding: 20px 5%; }
     color: var(--text); margin-right: 15px; 
     letter-spacing: 1.5px; font-weight: bold;
 }
+@media screen and (max-width: 1010px) {
+    .home-buttons {
+        display: flex; margin-top: 40px;
+        flex-direction: column; gap: 15px;
+    }
+    .main-button, .second-button { padding: 8px 40px; text-align: center; }
+    .custom-computer { display: none; }
+}
 .main-button {
     background-color: var(--main-color-transparent);
     border: 2px solid var(--main-color);

@@ -28,12 +28,6 @@ header { display: flex; justify-content: space-between!important }
 
 
 /* HOME MAIN ELEMENT */
-.home-buttons {
-    display: flex; margin-top: 40px;
-    flex-direction: column; gap: 15px;
-}
-.main-button, .second-button { padding: 8px 40px; text-align: center; }
-
 .social-icons { display: flex; }
 .fa-instagram { margin-top: 0px!important }
 
