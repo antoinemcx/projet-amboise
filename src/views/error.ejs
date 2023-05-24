@@ -28,6 +28,10 @@
         } else if(code === '503') {
             errorMessage = "Site en maintenance...",
             errorSubtitle = "Le site est pour l'instant inaccessible mais arrive bientôt !<br>Projet Amboise prépare de nouvelles surprises alors revenez vite."
+        } else if(code === '200') {
+            errorMessage = "Annulé avec succès.",
+            errorSubtitle = "Le paiement a bien été annulé."
+            secondButton = ["ACHETER LE JEU", "/buy"];
         }
     %>
 
