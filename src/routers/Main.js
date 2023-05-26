@@ -9,7 +9,7 @@ router.get("/", checkMaintenance, async (req, res) => {
     const accountCount = await global.db.query('SELECT COUNT(*) AS count FROM users;');
     const gameCount = await global.db.query('SELECT COUNT(*) AS count FROM users WHERE game != 0;');
     const memberCount = global.client && global.client.guilds.cache.get(discord.server_id).memberCount;
-    const supposedMoney = parseInt(gameCount[0].count) * 7;
+    const supposedMoney = parseInt(gameCount[0].count) * 4;
     
     res.render('index.ejs', { req, accountCount: accountCount[0].count, gameCount: gameCount[0].count, supposedMoney,  memberCount })
 })
