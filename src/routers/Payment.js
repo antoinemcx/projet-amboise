@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const paypal = require("paypal-rest-sdk");
-const { sandbox_paypal, production } = require('../../config');
+const { sandbox_paypal, production, discord } = require('../../config');
 const { checkMaintenance } = require('../utils/web_functions');
 console.log("\x1b[36m%s\x1b[0m", "(!) Router Payment chargé...");
 
@@ -15,6 +15,7 @@ paypal.configure({
 })
 
 router.get('/', checkMaintenance, (req, res) => {
+    if(!req.isAuthenticated()) { return res.render('error.ejs', { req, code: '401' }) }
     res.render('buy.ejs', { req })
 })
 
@@ -33,14 +34,14 @@ router.post('/', (req, res) => {
                 "items": [{
                     "name": "Jeu",
                     "sku": "001",
-                    "price": "4.00",
+                    "price": "5.00",
                     "currency": "EUR",
                     "quantity": 1
                 }]
             },
             "amount": {
                 "currency": "EUR",
-                "total": "4.00"
+                "total": "5.00"
             },
             "description": "Acheter le jeu vidéo Projet Amboise."
         }]
@@ -61,6 +62,7 @@ router.post('/', (req, res) => {
 });
 
 router.get('/success', (req, res) => {
+    if(!req.isAuthenticated()) { return res.render('error.ejs', { req, code: '401' }) }
     const payerId = req.query.PayerID;
     const paymentId = req.query.paymentId;
 
@@ -69,7 +71,7 @@ router.get('/success', (req, res) => {
         "transactions": [{
             "amount": {
                 "currency": "EUR",
-                "total": "4.00"
+                "total": "5.00"
             }
         }]
     };
@@ -79,7 +81,15 @@ router.get('/success', (req, res) => {
             console.log(error.response);
             return res.render('error.ejs', { req, code: '404' })
         } else {
-            console.log(JSON.stringify(payment));
+            const payment_id = payment.transactions[0].related_resources[0] ? payment.transactions[0].related_resources[0].sale.id : undefined;
+
+            global.db.query(`UPDATE users SET game=true, transactionID='${payment_id}' WHERE id=${req.user.id};`);
+            global.client.channels.cache.get(discord.channels.logs).send({embeds: [{
+                color: global.client.color.messagecolor.green,
+                title: `Achat du jeu !`,
+                description: `ID de la transaction : \`${payment_id}\`\n\nNom : \`${req.user.prenom} ${req.user.nom}\`\nEmail : \`${req.user.email}\`\n
+Pseudonyme : \`${req.user.username}\`\nStatus : \`${req.user.stm === null ? 'Extérieur à STM' : (req.user.stm === true ? 'Elève de STM' : 'Ancien élève de STM')}\``,
+            }]});
             res.send('S');
         }
     });
