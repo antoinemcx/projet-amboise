@@ -24,6 +24,10 @@
             <header><%- include('../parts/header'); -%></header>
 
             <div class="container">
+                <% if(req.user.game === null) { %>
+                    <div class="game-message">Vous ne possédez pas le jeu... <a href="/buy">Vous pouvez l'acheter en cliquant ici</a></div>
+                <% } %>
+
                 <section id="info">
                     <div class="is-title-second pt-5">Votre profil</div>
     
@@ -56,7 +60,14 @@
     
                         <div class="info-element">
                             <div class="element-name">Jeu</div>
-                            <div class="element-body"><%= req.user.game === null ? 'non possédé' : 'possédé' %> <%= req.user.game === null && req.user.beta !== null ? "(mais bêta possédée)" : '' %></div>
+                            <% if(req.user.game === null) { %>
+                                <div class="element-body">
+                                    non possédé <%= req.user.beta !== null ? "(mais bêta possédée)" : '' %>
+                                    <a href="/buy" class="edit-profile ml-3" style="padding:3px 22px;">Acheter le jeu</a>
+                                </div>
+                            <% } else { %>
+                                <div class="element-body">possédé</div>
+                            <% } %>
                         </div>
     
                         <hr>
@@ -96,14 +107,6 @@
                         </div>
                     </section>
                 <% } %>
-
-                <div class="game-message">
-                    <% if(req.user.game === null) { %>
-                        Vous ne possédez pas le jeu... <a href="/buy">Vous pouvez l'acheter en cliquant ici</a>
-                    <% } else { %>
-                        Vous possédez le jeu, <a href="/download">vous pouvez l'installer en cliquant ici</a>
-                    <% } %>
-                </div>
             </div>
         </div>
         
