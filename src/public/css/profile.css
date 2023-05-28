@@ -3,7 +3,7 @@
 
 
 .profile_info {
-    padding: 20px; border-radius: 10px;
+    padding: 20px 30px; border-radius: 10px;
     background-color: var(--background-alt);
 }
 .profile_info .info-element { display: flex; padding: 10px 0; }
@@ -23,15 +23,15 @@
     font-size: 18px; color: var(--text-second);
     border-radius: 15px; cursor: pointer; padding: 5px 30px;
 }
-.edit-profile { background-color: var(--back2top); }
-.edit-profile:hover {
-    transition: .15s; color: var(--text-second);
-    background-color: var(--back2top-hover);
-}
 .delete-profile { background-color: var(--main-color-transparent); }
 .delete-profile:hover {
     transition: .15s; color: var(--text-second);
     background-color: var(--main-color);
+}
+.edit-profile { background-color: var(--back2top); }
+.edit-profile:hover {
+    transition: .15s; color: var(--text-second);
+    background-color: var(--back2top-hover);
 }
 
 

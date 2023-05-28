@@ -12,6 +12,7 @@
 
         <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/profile.css">
         <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
@@ -21,34 +22,28 @@
 
     <body>
         <div class="home__main">
-            <div class="first-child" style="background-image: url('/img/background')">
-                <header><%- include('./parts/header'); -%></header>
+            <header><%- include('./parts/header'); -%></header>
 
-                <div class="container home__main-container">
-                    <h1 class="error-message mt-4">Le jeu est actuellement en bêta, il n'est donc pas encore possible de l'acheter.</h1>
-                    <h1 class="subtitle">Ca arrive bientôt ! Rejoignez le serveur Discord ci-dessous pour être tenu au courant.</h1>
+            <div class="container">
+                <div class="buy_info">
+                    <div class="is-title">Acheter le jeu</div>
+                    <div class="is-title-second">5€ <span class="ttc">(TTC)</span></div>
 
-                    <div class="home-buttons">
-                        <a href="/discord" class="main-button">REJOINDRE LE DISCORD</a>
-                        <a href="/" class="second-button">ACCUEIL</a>
+                    <div class="description">
+                        Projet Amboise est un jeu vidéo jouable sur <u>Windows et MacOS</u> (plus d'informations <a href="/about" style="font-size: 26px">ici</a>).
+                        <br>Si vous rencontrez un problème, contactez-nous sur <a href="/discord" style="font-size:26px">discord</a> ou projet.amboise@gmail.com.
                     </div>
-
+    
                     <form method="POST" class="mt-5">
-                        <button type="submit">Test</button>
+                        <button class="submit-button" type="submit">Acheter maintenant</button>
                     </form>
+                    En cliquant sur "Acheter maintenant", vous acceptez les <a href="/legal">Conditions Générales de Vente</a>.
+
+                    <br><br>
                 </div>
             </div>
         </div>
 
-        <style>
-            .home__main-container { padding-left: 18%; padding-top: 10% }
-            @media screen and (max-width: 980px) {
-                .home__main-container { padding-left: 10% }
-            }
-            .home__main-container .error-message { font-size: 30px; max-width: 500px; }
-            .home__main-container .subtitle { font-size: 25px; max-width: 500px; margin-top: 15px; }
-        </style>
-        
 
         <!-- --------- JAVASCRIPT FILES -->
         <script src="/js/main.js"></script>
