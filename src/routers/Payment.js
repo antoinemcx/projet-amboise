@@ -76,15 +76,19 @@ router.get('/success', (req, res) => {
         }]
     };
 
-    paypal.payment.execute(paymentId, execute_payment_json, function (error, payment) {
+    paypal.payment.execute(paymentId, execute_payment_json, async function (error, payment) {
         if (error) {
             console.log(error.response);
             return res.render('error.ejs', { req, code: '404' })
         } else {
             const payment_id = payment.transactions[0].related_resources[0] ? payment.transactions[0].related_resources[0].sale.id : undefined;
+            
+            const tokens = await global.db.query(`SELECT * FROM tokens WHERE used IS NULL;`);
+            await global.db.query(`UPDATE tokens SET used=1 WHERE token='${tokens[0].token}';`)
+            
+            await global.db.query(`UPDATE users SET game=true, token='${tokens[0].token}', transactionID='${payment_id}' WHERE id=${req.user.id};`);
 
-            global.db.query(`UPDATE users SET game=true, transactionID='${payment_id}' WHERE id=${req.user.id};`);
-            global.client.channels.cache.get(discord.channels.logs).send({embeds: [{
+            await global.client.channels.cache.get(discord.channels.logs).send({embeds: [{
                 color: global.client.color.messagecolor.green,
                 title: `Achat du jeu !`,
                 description: `ID de la transaction : \`${payment_id}\`\n\nNom : \`${req.user.prenom} ${req.user.nom}\`\nEmail : \`${req.user.email}\`\n
