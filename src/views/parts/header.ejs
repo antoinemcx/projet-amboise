@@ -35,7 +35,7 @@
 
                 <div id="user-dropdown" class="user-dropdown hide" style="max-width:220px!important;">
                     <a class="dropdown-item" href="/profile">Mon compte</a>
-                    <a class="dropdown-item" href="/buy">Acheter le jeu</a>
+                    <% if(req.user.game === null) { %> <a class="dropdown-item" href="/buy">Acheter le jeu</a> <% } %>
                 
                     <hr>
                     <a class="dropdown-item" href="/logout">Se déconnecter</a>
