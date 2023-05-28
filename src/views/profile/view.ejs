@@ -78,17 +78,17 @@
                     </div>
                 </section>
 
-                <% if(req.user.beta !== null) { %>
-                    <section id="beta" class="beta-download_section">
-                        <div class="is-title-second">Télécharger la bêta</div>
+                <% if(req.user.game !== null) { %>
+                    <section id="download" class="download_section">
+                        <div class="is-title-second">Télécharger le jeu</div>
 
-                        <div class="beta-download">
+                        <div class="download">
                             <div class="download-card">
                                 <div class="download-card-logo">
                                     <i class="fa-brands fa-windows"></i>
                                 </div>
 
-                                <form method="post" action="/windows-beta">
+                                <form method="post" action="/windows">
                                     <button type="submit">
                                         <i class="fa-solid fa-download"></i> Windows
                                     </button>
@@ -100,8 +100,48 @@
                                     <i class="fa-brands fa-apple"></i>
                                 </div>
 
+                                <form method="post" action="/macos">
+                                    <button type="submit">
+                                        <i class="fa-solid fa-download"></i> MacOS
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="game-message" style="padding-bottom: 0; padding-top: 15px">
+                            Une fois le jeu téléchargé, suivez <a href="/tuto">ce tutoriel</a> pour pouvoir le lancer, l'activer et y jouer.
+                        </div>
+                    </section>
+
+                    <section id="token">
+                        <div class="is-title-second">Code d'accès</div>
+                    </section>
+                <% } %>
+
+                <% if(req.user.beta !== null) { %>
+                    <section id="beta" class="download_section">
+                        <div class="is-title-second">Télécharger la <span style="color:var(--main-color)">bêta</span></div>
+
+                        <div class="download">
+                            <div class="download-card">
+                                <div class="download-card-logo">
+                                    <i class="fa-brands fa-windows"></i>
+                                </div>
+
+                                <form method="post" action="/windows-beta">
+                                    <button type="submit">
+                                        <i class="fa-solid fa-download"></i> Windows (BÊTA)
+                                    </button>
+                                </form>
+                            </div>
+                            
+                            <div class="download-card">
+                                <div class="download-card-logo">
+                                    <i class="fa-brands fa-apple"></i>
+                                </div>
+
                                 <button style="cursor: not-allowed">
-                                    <i class="fa-solid fa-download"></i> Mac
+                                    <i class="fa-solid fa-download"></i> MacOS (BÊTA)
                                 </button>
                             </div>
                         </div>

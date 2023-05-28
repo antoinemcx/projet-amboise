@@ -39,8 +39,8 @@
 .game-message a { color: var(--main-color); cursor: pointer }
 
 
-.beta-download_section { padding: 50px 0; }
-.beta-download { display: flex; text-align: center }
+.download_section { padding: 50px 0; }
+.download { display: flex; text-align: center }
 .download-card {
     margin-right: 35px; width: 275px; min-height: 325px;
     background-color: var(--background-alt); border-radius: 10px;

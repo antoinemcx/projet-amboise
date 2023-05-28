@@ -18,8 +18,12 @@ router.get("/about", checkMaintenance, (req, res) => {
     res.render('about.ejs', { req })
 })
 
-router.post('/windows-beta', (req, res) => {
-    res.sendFile(path.resolve('src/download/windows-beta.zip'))
+router.post('/windows-beta', (req, res) => { res.sendFile(path.resolve('src/download/windows-beta.zip')) })
+router.post('/windows', (req, res) => {
+    res.sendFile(path.resolve('src/download/windows-beta.zip')) // TODO
+})
+router.post('/macos', (req, res) => {
+    res.sendFile(path.resolve('src/download/windows-beta.zip')) // TODO
 })
 
 router.get("/legal", checkMaintenance, (req, res) => {

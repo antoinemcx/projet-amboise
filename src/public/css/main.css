@@ -22,6 +22,7 @@ body { line-height: 1.5; background-color: var(--background-alt); }
 .d-flex { display: flex!important; }
 .is-title { font-size: 40px; font-weight: bold; margin: 25px 0; }
 .is-title-second { font-size: 35px; font-weight: bold; margin: 20px 0; }
+.is-title-second span { font-size: 35px; font-weight: bold; margin: 20px 0; }
 .mobile { display: none; }
 hr { background-color: var(--back2top); width: 90%; }
 
