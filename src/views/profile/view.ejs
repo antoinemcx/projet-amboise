@@ -28,6 +28,8 @@
                     <div class="game-message">Vous ne possédez pas le jeu... <a href="/buy">Vous pouvez l'acheter en cliquant ici</a></div>
                 <% } %>
 
+                <% let isToken = false; %>
+
                 <section id="info">
                     <div class="is-title-second pt-5">Votre profil</div>
     
@@ -114,7 +116,29 @@
                     </section>
 
                     <section id="token">
-                        <div class="is-title-second">Code d'accès</div>
+                        <div class="is-title-second">Code d'activation</div>
+
+                        <div class="game-message" style="padding:0">
+                            Lorsque vous lancez le jeu pour la première fois, vous aurez besoin du code d'activation ci-dessous.
+                            <br><u>Attention</u> : <a href="#">ce code est à usage unique et vous ne pourrez le copier qu'une fois</a> donc copiez le puis entrez le dans le jeu juste après.
+                        </div>
+
+                        <div class="token">
+                            <% if(showToken === false) { %>
+                                <% if(req.user.token === null) { %>
+                                    Vous avez déjà récupéré votre code d'activation !
+                                    <br>En cas de problème ou si vous souhaitez changer d'ordinateur, veuillez contacter le support sur <a href="/discord">discord</a> ou projet.amboise@gmail.com.    
+                                <% } else { %>
+                                    <form method="POST">
+                                        <button type="submit" class="delete-profile" style="outline:none;border:none">Cliquez ici pour afficher le code d'activation</button>
+                                    </form>
+                                <% } %>
+
+                            <% } else { isToken=true %>
+                                <span><%= showToken %></span>
+                                <button class="edit-profile" style="border:none;outline:none;margin-left:20px;" onclick="copyToClipboard('<%= showToken %>')" id="copy">Copier</button>
+                            <% } %>
+                        </div>
                     </section>
                 <% } %>
 
@@ -149,7 +173,25 @@
                 <% } %>
             </div>
         </div>
-        
+
+        <script>
+            if(<%= isToken %> !== false) {
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#copy").offset().top
+                }, 800);
+            }
+
+            function copyToClipboard(element) {
+                var $temp = $("<input>");
+                $("body").append($temp);
+                
+                $temp.val(element).select();
+                document.execCommand("copy");
+                $temp.remove();
+
+                $('#copy').html("Copié !")
+            }
+        </script>
 
         <!-- --------- JAVASCRIPT FILES -->
         <script src="/js/main.js"></script>

@@ -35,11 +35,12 @@
 }
 
 
-.game-message, .game-message a { padding-bottom: 30px; padding-top: 75px; font-size: 19px; }
+.game-message, .game-message a, .game-message u { padding-bottom: 30px; padding-top: 75px; font-size: 19px; }
 .game-message a { color: var(--main-color); cursor: pointer }
 
 
 .download_section { padding: 50px 0; }
+#beta { margin-top: 30px; }
 .download { display: flex; text-align: center }
 .download-card {
     margin-right: 35px; width: 275px; min-height: 325px;
@@ -58,3 +59,11 @@
 
 .delete-section { padding-top: 8%!important; }
 .delete-button { border: none; line-height: normal; margin-right: 10px; }
+
+.token {
+    background-color: var(--background-alt); padding: 15px 30px;
+    color: var(--text-second); font-size: 18px;
+    border-radius: 10px; margin-top: 25px;
+}
+.token a { font-size: 18px; color: var(--main-color) }
+.token span { font-size: 22px; font-style: italic; color: var(--text-second); }
