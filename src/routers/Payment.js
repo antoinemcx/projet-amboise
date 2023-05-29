@@ -16,6 +16,8 @@ paypal.configure({
 
 router.get('/', checkMaintenance, (req, res) => {
     if(!req.isAuthenticated()) { return res.render('error.ejs', { req, code: '401' }) }
+    if(req.user.game !== null) { return res.render('error.ejs', { req, code: '423' }) }
+    
     res.render('buy.ejs', { req })
 })
 
