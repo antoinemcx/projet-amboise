@@ -30,4 +30,12 @@ router.get("/legal", checkMaintenance, (req, res) => {
     res.render('legal.ejs', { req })
 })
 
+router.get('/robots.txt', (req, res) => { res.set('Content-Type', 'text/plain'); res.send(`Sitemap: https://projet-amboise.fr/sitemap.xml`); })
+router.get('/sitemap.xml', (req, res) => {
+    let link = "<url><loc>https://projet-amboise.fr/</loc></url>\n<url><loc>https://projet-amboise.fr/about</loc></url>";
+
+    res.set('Content-Type', 'text/xml');
+    res.send(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="https://www.google.com/schemas/sitemap-image/1.1">${link}</urlset>`);
+})
+
 module.exports = router;
