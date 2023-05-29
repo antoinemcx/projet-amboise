@@ -194,7 +194,7 @@ header { padding: 20px 5%; }
 
 /* MEDIA SECTION */
 .media__section { padding: 100px 0; background-color: var(--backgroud-main); margin-top: 55px }
-.media__section iframe { width: 100%; border-radius: .7rem }
+.media__section iframe { width: 100%; height: 100%; border-radius: .7rem }
 .media__section .screenshots { display: flex; margin: 0 -15px; }
 .screenshots .main-image, .screenshots .gallery-image { display: flex; }
 .screenshots .main-image img, .screenshots .gallery-image img { width: 100%; border-radius: .7rem; cursor: pointer }

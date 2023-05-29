@@ -40,8 +40,6 @@ header { display: flex; justify-content: space-between!important }
 .feature img { max-width: 100% }
 .feature-reverse { display: flex; flex-direction: column-reverse; }
 
-.media__section iframe { height: 250px }
-
 
 /* BUY PAGE */
 .buy_info { margin-top: 50px; margin-bottom: 80px; }
