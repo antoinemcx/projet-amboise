@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const paypal = require("paypal-rest-sdk");
-const { sandbox_paypal, production, discord } = require('../../config');
+const { sandbox_paypal, live_paypal, production, discord } = require('../../config');
 const { checkMaintenance } = require('../utils/web_functions');
 console.log("\x1b[36m%s\x1b[0m", "(!) Router Payment chargé...");
 
@@ -9,9 +9,9 @@ var website_url = 'https://projet-amboise.fr'
 if(production === false) { website_url = 'http://localhost:5000' }
 
 paypal.configure({
-    'mode': 'sandbox', // TODO -> live pour l'alpha
-    'client_id': sandbox_paypal.client_id,
-    'client_secret': sandbox_paypal.client_secret
+    'mode': 'live', //test -> sandbox
+    'client_id': live_paypal.client_id,
+    'client_secret': live_paypal.client_secret
 })
 
 router.get('/', checkMaintenance, (req, res) => {
@@ -96,7 +96,8 @@ router.get('/success', (req, res) => {
                 description: `ID de la transaction : \`${payment_id}\`\n\nNom : \`${req.user.prenom} ${req.user.nom}\`\nEmail : \`${req.user.email}\`\n
 Pseudonyme : \`${req.user.username}\`\nStatus : \`${req.user.stm === null ? 'Extérieur à STM' : (req.user.stm === true ? 'Elève de STM' : 'Ancien élève de STM')}\``,
             }]});
-            res.send('S');
+            
+            res.render('success.ejs', { req })
         }
     });
 });

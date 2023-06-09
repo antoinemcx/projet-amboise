@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/logo.png" class="flavicon">
+        <title>Projet Amboise — Boutique</title>
+        <meta name="og:image" content="/img/logo.png">
+        <meta name="theme-color" content="#d34343">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/profile.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+
+    <body>
+        <div class="home__main" style="height:100vh!important">
+            <div class="first-child" style="background-image: url('/img/background')">
+                <header><%- include('./parts/header'); -%></header>
+
+                <div class="container home__main-container">
+                    <h1 class="is-title">Transaction réussie, merci !</h1>
+                    <h1>
+                        Le jeu est maintenant accessible sur votre compte.
+                        <br>Pour plus d'informations, veuillez consulter la <a href="/tuto">deuxième partie du tutoriel</a>.
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            h1 { font-size: 30px; }
+            h1 a { font-size: 30px; color: var(--main-color) }
+            h1 a:hover { color: var(--main-color-hover) }
+
+            .home__main-container { padding-left: 5%; padding-top: 10% }
+            @media screen and (max-width: 980px) {
+                .home__main-container { padding-left: 10% }
+            }
+        </style>
+
+
+        <!-- --------- JAVASCRIPT FILES -->
+        <script src="/js/main.js"></script>
+    </body>
+</html>

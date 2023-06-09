@@ -8,13 +8,20 @@
     <ul class="nav__links">
         <li class="nav-item"><a href="/" class="nav-link nav-main">Accueil</a></li>
         <li class="nav-item"><a href="/about" class="nav-link nav-main">A propos</a></li>
+        <li class="nav-item"><a href="/tuto" class="nav-link nav-main">Tutoriel</a></li>
         <li class="nav-item"><a href="/discord" class="nav-link nav-main">Contact</a></li>
 
         <div class="mobile">
             <hr style="margin-top: 30px;">
             <% if(req.isAuthenticated()) { %>
                 <li class="nav-item" style="padding-top:0"><a href="/profile" class="nav-link nav-main">Mon compte</a></li>
-                <li class="nav-item"><a href="/buy" class="nav-link nav-main">Acheter le jeu</a></li>
+                <li class="nav-item">
+                    <% if(req.user.game === null) { %>
+                        <a class="nav-link nav-main" href="/buy">Acheter le jeu</a>
+                    <% } else { %>
+                        <a class="nav-link nav-main" href="/tuto">Tutoriel</a>
+                    <% } %>
+                </li>
                 <hr>
 
                 <li class="nav-item" style="padding-top:0"><a href="/logout" class="nav-link nav-main">Se déconnecter</a></li>
@@ -35,7 +42,11 @@
 
                 <div id="user-dropdown" class="user-dropdown hide" style="max-width:220px!important;">
                     <a class="dropdown-item" href="/profile">Mon compte</a>
-                    <% if(req.user.game === null) { %> <a class="dropdown-item" href="/buy">Acheter le jeu</a> <% } %>
+                    <% if(req.user.game === null) { %>
+                        <a class="dropdown-item" href="/buy">Acheter le jeu</a>
+                    <% } else { %>
+                        <a class="dropdown-item" href="/tuto">Tutoriel</a>
+                    <% } %>
                 
                     <hr>
                     <a class="dropdown-item" href="/logout">Se déconnecter</a>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/logo.png" class="flavicon">
+        <title>Projet Amboise — Tutoriel</title>
+        <meta name="description" content="Projet Amboise est un jeu fait par des terminales du lycée d'Amboise aidant au financement du bal des Termianles.">
+        <meta name="og:image" content="/img/logo.png">
+        <meta name="theme-color" content="#d34343">
+
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" media="screen and (max-width: 1250px)" href="/css/mobile.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <script src="https://kit.fontawesome.com/74ba3d64b1.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+
+    <body>
+        <div class="home__main" style="height: inherit; min-height: 100vh">
+            <header><%- include('./parts/header'); -%></header>
+
+            <div class="container tuto__section reveal">
+                <span style="color: var(--text-second)">Voici une rapide explication de comment faire pour acheter et jouer à Projet Amboise.</span>
+
+                <div class="is-title pt-2">I. Acheter le jeu</div>
+                <div class="sub_info">
+                    <div class="is-title-second">1. Création de votre compte</div>
+                    Avant d'acheter le jeu il faut que vous ayez un compte.
+                    <br>Pour cela, cliquez sur "Se connecter" en haut à droite de l'écran (ou dans le menu à gauche sur téléphone) puis sur "Inscrivez-vous" :
+
+                    <a href="/img/screen_1.png" target="_BLANK"><img src="/img/screen_1.png"></a>
+                    <br>Une fois que vous êtes inscrit(e), n'oubliez pas de vous reconnecter via le bouton "Se connecter".
+
+                    <div class="is-title-second">2. Paiement</div>
+                    Pour acheter Projet Amboise, rendez-vous sur la page d'achat (bouton "Acheter le jeu" accessible sur la page d'accueil ou sur votre profil).
+                    <a href="/img/screen_2.png" target="_BLANK"><img src="/img/screen_2.png"></a>
+                    <br>Ensuite rien de plus simple : cliquez sur le bouton "Acheter maintenant" qui vous redirigera vers le processus de paiement de PayPal (vous pourrez alors choisir de payer avec votre compte PayPal ou directement avec une carte bancaire).
+
+                    <br><br>Une fois le paiement terminé vous arriverez sur une nouvelle page confirmant votre achat, vous pouvez alors suivre la suite de ce tutoriel.
+                </div>
+
+
+                <div class="is-title pt-5" id="2">II. Après avoir acheté le jeu</div>
+                <div class="sub_info">
+                    <div class="is-title-second">1. Lancement du jeu</div>
+                    Voici une vidéo expliquant comment installer, lancer et jouer au jeu :
+                    <iframe style="aspect-ratio:16/9" src="https://www.youtube.com/embed/Mc53S4Ip8Ws" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                    <div class="is-title-second">2. Les touches</div>
+                    <ul>
+                        <li>Z : Avancer</li>
+                        <li>Q : Straffer à gauche</li>
+                        <li>S : Reculer</li>
+                        <li>D : Straffer à droite</li>
+                        <li>Espace : Sauter</li>
+                        <li>Clic gauche : Tirer</li>
+                        <li>Echap : Menu Pause</li>
+                    </ul>
+                </div>
+
+                Ca y est vous savez tout, bon jeu sur Projet Amboise !
+            </div>
+        </div>
+        
+
+        <!-- --------- JAVASCRIPT FILES -->
+        <script src="/js/main.js"></script>
+    </body>
+</html>

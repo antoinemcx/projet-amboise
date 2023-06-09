@@ -194,7 +194,7 @@ header { padding: 20px 5%; }
 
 /* MEDIA SECTION */
 .media__section { padding: 100px 0; background-color: var(--backgroud-main); margin-top: 55px }
-.media__section iframe { width: 100%; height: 100%; border-radius: .7rem }
+iframe { width: 100%; height: 100%; border-radius: .7rem }
 .media__section .screenshots { display: flex; margin: 0 -15px; }
 .screenshots .main-image, .screenshots .gallery-image { display: flex; }
 .screenshots .main-image img, .screenshots .gallery-image img { width: 100%; border-radius: .7rem; cursor: pointer }
@@ -266,10 +266,23 @@ header { padding: 20px 5%; }
 .about__section a:hover { color: var(--main-color-hover); font-size: 18px; }
 
 
+/* TUTO PAGE */
+.tuto__section {
+    padding-top: 5%; color: var(--text);
+    font-size: 19px; line-height: 2; padding-bottom: 50px;
+}
+.tuto__section span { color: var(--text-second); font-size: 18px; }
+.tuto__section .sub_info { margin-left: 15px; font-size: 19px; }
+.tuto__section img { width: 100%; border: solid 1px var(--main-color-transparent); border-radius: 5px; }
+.tuto__section li { font-size: 19px; color: var(--text); }
+.tuto__section .is-title { margin-bottom: 0; }
+.tuto__section .is-title-second { margin-bottom: 10px; }
+
+
 /* BUY PAGE */
 .buy_info {
     padding: 20px 40px; border-radius: 10px;
-    margin-top: 150px; font-size: 20px;
+    margin-top: 70px; font-size: 20px; margin-bottom: 70px;
     background-color: var(--background-alt); color: var(--text-third);
 }
 .buy_info .description {

@@ -9,22 +9,16 @@ router.get("/", checkMaintenance, async (req, res) => {
     const accountCount = await global.db.query('SELECT COUNT(*) AS count FROM users;');
     const gameCount = await global.db.query('SELECT COUNT(*) AS count FROM users WHERE game != 0;');
     const memberCount = global.client && global.client.guilds.cache.get(discord.server_id).memberCount;
-    const supposedMoney = parseInt(gameCount[0].count) * 4;
+    const supposedMoney = ((parseInt(gameCount[0].count)-1) * 4.50) - 6;
     
-    res.render('index.ejs', { req, accountCount: accountCount[0].count, gameCount: gameCount[0].count, supposedMoney,  memberCount })
+    res.render('index.ejs', { req, accountCount: accountCount[0].count, gameCount: parseInt(gameCount[0].count), supposedMoney,  memberCount })
 })
 
-router.get("/about", checkMaintenance, (req, res) => {
-    res.render('about.ejs', { req })
-})
+router.get("/about", checkMaintenance, (req, res) => { res.render('about.ejs', { req }) })
+router.get("/tuto", checkMaintenance, (req, res) => { res.render('tuto.ejs', { req }) })
 
-router.post('/windows-beta', (req, res) => { res.sendFile(path.resolve('src/download/windows-beta.zip')) })
-router.post('/windows', (req, res) => {
-    res.sendFile(path.resolve('src/download/windows-beta.zip')) // TODO
-})
-router.post('/macos', (req, res) => {
-    res.sendFile(path.resolve('src/download/windows-beta.zip')) // TODO
-})
+router.post('/ProjetAmboise_Windows', (req, res) => { res.sendFile(path.resolve(`src/download/ProjetAmboise_Windows.zip`)) })
+router.post('/ProjetAmboise_MacOS', (req, res) => { res.sendFile(path.resolve(`src/download/ProjetAmboise_MacOS.zip`)) })
 
 router.get("/legal", checkMaintenance, (req, res) => {
     res.render('legal.ejs', { req })

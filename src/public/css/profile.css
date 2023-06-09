@@ -63,7 +63,7 @@
 .token {
     background-color: var(--background-alt); padding: 15px 30px;
     color: var(--text-second); font-size: 18px;
-    border-radius: 10px; margin-top: 25px;
+    border-radius: 10px; margin-top: 25px; margin-bottom: 50px;
 }
 .token a { font-size: 18px; color: var(--main-color) }
 .token span { font-size: 22px; font-style: italic; color: var(--text-second); }

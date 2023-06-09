@@ -11,10 +11,10 @@ module.exports = {
 
         const accountCount = await client.db.query('SELECT COUNT(*) AS count FROM users;');
         const gameCount = await client.db.query('SELECT COUNT(*) AS count FROM users WHERE game != 0;');
-        const supposedMoney = parseInt(gameCount[0].count) * 7;
+        const supposedMoney = ((parseInt(gameCount[0].count)-1) * 4.50) - 6;
 
         const website_url = "https://projet-amboise.fr"
-        const trailer_url = "https://youtu.be/dQw4w9WgXcQ" //TODO
+        const trailer_url = "https://youtu.be/d47dTzbg6wQ"
 
         msg.delete();
 
@@ -26,7 +26,7 @@ module.exports = {
                 name: 'Joueurs inscrits', value: accountCount[0].count.toString(), inline: true
             },
             {
-                name: 'Exemplaires achetés', value: gameCount[0].count.toString(), inline: true
+                name: 'Exemplaires achetés', value: parseInt(gameCount[0].count).toString(), inline: true
             },
             {
                 name: 'Bénéfice estimé', value: `${supposedMoney}€`, inline: true
