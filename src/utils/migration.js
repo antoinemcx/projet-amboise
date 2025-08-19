@@ -11,7 +11,7 @@ db.query(`CREATE TABLE IF NOT EXISTS \`users\` (
     \`stm\` varchar(50) DEFAULT NULL,
     \`game\` varchar(50) DEFAULT NULL,
     \`rendering\` varchar(50) DEFAULT NULL,
-    \`beta\` varchar(50) DEFAULT NULL,
+    \`beta\` varchar(50) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 `, (err) => {
